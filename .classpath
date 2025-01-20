@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="E:/My Files/College/3rd Year - 1st Sem/Automata/Project/VitalFit/lib/hsqldb-2.5.0.jar"/>
 	<classpathentry kind="lib" path="E:/My Files/College/3rd Year - 1st Sem/Automata/Project/VitalFit/lib/jackcess-3.0.1.jar"/>
 	<classpathentry kind="lib" path="E:/My Files/College/3rd Year - 1st Sem/Automata/Project/VitalFit/lib/ucanaccess-5.0.1.jar"/>
+	<classpathentry kind="lib" path="Resources"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
