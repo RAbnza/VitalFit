@@ -1,12 +1,19 @@
 package controller;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class DashboardController {
 
@@ -35,7 +42,7 @@ public class DashboardController {
     private Text progressBtn;
 
     @FXML
-    private Text prorfileBtn;
+    private Text profileBtn;
 
     @FXML
     private Text recommendation_calories_text_1;
@@ -121,8 +128,24 @@ public class DashboardController {
     }
 
     @FXML
-    void prorfileBtn_Clicked(MouseEvent event) {
+    void profileBtn_Clicked(MouseEvent event) {
+    	
+    	//Change to Profile
+        try {
+            // Load the Balance Due FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Profile.fxml"));
+            Parent ProfileRoot = loader.load();
 
+            // Get the current stage (window) from the event source
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Set the new scene
+            Scene scene = new Scene(ProfileRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

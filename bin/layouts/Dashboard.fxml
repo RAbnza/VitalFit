@@ -38,7 +38,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Text>
-            <Text fx:id="prorfileBtn" fill="#475569" layoutX="78.0" layoutY="197.0" onMouseClicked="#prorfileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+            <Text fx:id="profileBtn" fill="#475569" layoutX="78.0" layoutY="197.0" onMouseClicked="#profileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
                <font>
                   <Font name="Manrope SemiBold" size="14.0" />
                </font>
@@ -175,7 +175,7 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <Text fx:id="heightText" layoutX="565.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="167.8" wrappingWidth="105.85601806640625">
+            <Text fx:id="heightText" layoutX="565.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00.0" wrappingWidth="105.85601806640625">
                <font>
                   <Font name="League Spartan SemiBold" size="40.0" />
                </font>
@@ -196,7 +196,7 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <Text fx:id="ageText" layoutX="857.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="34">
+            <Text fx:id="ageText" layoutX="857.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
                <font>
                   <Font name="League Spartan Light" size="32.0" />
                </font>
