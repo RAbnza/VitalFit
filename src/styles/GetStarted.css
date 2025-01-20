@@ -1,11 +1,11 @@
-.WelcomeScreenBtn {
+.GetStartedBtn {
     -fx-background-color: white; /* White background */
     -fx-text-fill: linear-gradient(from 0% 0% to 100% 100%, #92A3FD, #9DCEFF); /* Gradient text color */
     -fx-padding: 10px 20px; /* Optional: Adjust padding */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); /* Optional: Add a shadow */
 }
 
-.WelcomeScreen:pressed {
+.GetStartedBtn:pressed {
     -fx-background-color: white; /* Keep background white when pressed */
     -fx-text-fill: linear-gradient(from 0% 0% to 100% 100%, #7283DC, #7BACDE); /* Slightly darker gradient for pressed state */
     -fx-effect: none; /* Remove shadow to simulate being "pressed in" */

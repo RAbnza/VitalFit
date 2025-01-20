@@ -20,14 +20,14 @@ public class WelcomeScreenController {
     void nextBtn_Clicked(ActionEvent event) {
         try {
             // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WelcomeScreen.fxml"));
-            Parent WelcomeScreenRoot = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/GetStarted.fxml"));
+            Parent GetStartedRoot = loader.load();
 
             // Get the current stage (window) from the event source
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             // Set the new scene
-            Scene scene = new Scene(WelcomeScreenRoot);
+            Scene scene = new Scene(GetStartedRoot);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
