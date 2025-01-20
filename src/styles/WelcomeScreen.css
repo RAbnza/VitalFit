@@ -5,7 +5,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); /* Optional: Add a shadow */
 }
 
-.WelcomeScreen:pressed {
+.WelcomeScreenBtn:pressed {
     -fx-background-color: white; /* Keep background white when pressed */
     -fx-text-fill: linear-gradient(from 0% 0% to 100% 100%, #7283DC, #7BACDE); /* Slightly darker gradient for pressed state */
     -fx-effect: none; /* Remove shadow to simulate being "pressed in" */

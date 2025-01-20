@@ -11,13 +11,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class WelcomeScreenController {
+public class GetStartedController {
 
     @FXML
     private Button nextBtn;
 
     @FXML
-    void nextBtn_Clicked(ActionEvent event) {
+    void getStartedBtn_Clicked(ActionEvent event) {
         try {
             // Load the Balance Due FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WelcomeScreen.fxml"));
