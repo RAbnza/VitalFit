@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="780.0" prefWidth="1200.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="780.0" fitWidth="1200.0" onMouseClicked="#background_Clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/Dashboard.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutBtn" layoutX="78.0" layoutY="714.0" mnemonicParsing="false" onAction="#logoutBtn_Clicked" prefHeight="13.0" prefWidth="98.0" style="-fx-background-radius: 99;" styleClass="Btn2" stylesheets="@../styles/Dashboard.css" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Text fx:id="dashboardBtn" fill="WHITE" layoutX="78.0" layoutY="132.0" onMouseClicked="#dashboardBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Text>
+            <Text fx:id="prorfileBtn" fill="#475569" layoutX="78.0" layoutY="197.0" onMouseClicked="#prorfileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="workoutPlanBtn" fill="#475569" layoutX="78.0" layoutY="261.0" onMouseClicked="#workoutPlanBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Workout Plan">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="progressBtn" fill="#475569" layoutX="78.0" layoutY="325.0" onMouseClicked="#progressBtn" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="resourcesBtn" fill="#475569" layoutX="78.0" layoutY="389.0" onMouseClicked="#resourcesBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Resources">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text layoutX="377.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight">
+               <font>
+                  <Font name="League Spartan Light" size="32.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="428.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kg">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="weightText" layoutX="356.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="72.70199584960938">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="606.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height">
+               <font>
+                  <Font name="League Spartan Light" size="32.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="671.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CM">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="heightText" layoutX="565.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="167.8" wrappingWidth="105.85601806640625">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="ageText" layoutX="857.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="34">
+               <font>
+                  <Font name="League Spartan Light" size="32.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="902.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="years old">
+               <font>
+                  <Font name="League Spartan Light" size="32.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="nameText" layoutX="781.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Name&gt;" textAlignment="CENTER" wrappingWidth="325.85601806640625">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Line endX="-7.73333740234375" endY="111.20001220703125" layoutX="534.0" layoutY="318.0" startX="-7.73333740234375" startY="0.79998779296875" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2.0" />
+            <Line endX="-7.73333740234375" endY="111.20001220703125" layoutX="780.0" layoutY="318.0" startX="-7.73333740234375" startY="0.79998779296875" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2.0" />
+            <Pane layoutX="257.0" layoutY="517.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="League Spartan Light" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="resource_title_text_1" fill="#232323" layoutX="-3.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="Poppins Medium" size="16.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane layoutX="257.0" layoutY="646.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="League Spartan Light" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="resource_title_text_4" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="Poppins Medium" size="16.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane layoutX="574.0" layoutY="517.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="League Spartan Light" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="resource_title_text_2" fill="#232323" layoutX="-3.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="Poppins Medium" size="16.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane layoutX="574.0" layoutY="646.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="League Spartan Light" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="resource_title_text_5" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="Poppins Medium" size="16.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane layoutX="888.0" layoutY="517.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="League Spartan Light" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="resource_title_text_3" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="Poppins Medium" size="16.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane layoutX="888.0" layoutY="646.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="League Spartan Light" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="resource_title_text_6" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                     <font>
+                        <Font name="Poppins Medium" size="16.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane layoutX="267.0" layoutY="120.0" prefHeight="138.0" prefWidth="198.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="198.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/recommendation_sample.png" />
+                     </image></ImageView>
+                  <Text fx:id="recommendation_title_text_1" layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Workout Title&gt;">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="22.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Time_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="112.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Calories_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="recommendation_duration_text_1" fill="#1d1617" layoutX="39.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 minutes">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="recommendation_calories_text_1" fill="#1d1617" layoutX="128.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 KCal">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="509.0" layoutY="120.0" prefHeight="138.0" prefWidth="198.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="198.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/recommendation_sample.png" />
+                     </image></ImageView>
+                  <Text fx:id="recommendation_title_text_2" layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Workout Title&gt;">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="22.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Time_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="112.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Calories_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="recommendation_duration_text_2" fill="#1d1617" layoutX="39.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 minutes">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="recommendation_calories_text_2" fill="#1d1617" layoutX="128.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 KCal">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="748.0" layoutY="120.0" prefHeight="138.0" prefWidth="198.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="198.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/recommendation_sample.png" />
+                     </image></ImageView>
+                  <Text fx:id="recommendation_title_text_3" layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Workout Title&gt;">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="22.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Time_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="112.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Calories_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="recommendation_duration_text_3" fill="#1d1617" layoutX="39.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 minutes">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="recommendation_calories_text_3" fill="#1d1617" layoutX="128.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 KCal">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="985.0" layoutY="120.0" prefHeight="138.0" prefWidth="198.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="198.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/recommendation_sample.png" />
+                     </image></ImageView>
+                  <Text fx:id="recommendation_title_text_4" layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Workout Title&gt;">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="22.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Time_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="112.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Resources/Images/Calories_Icon.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="recommendation_duration_text_4" fill="#1d1617" layoutX="39.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 minutes">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="recommendation_calories_text_4" fill="#1d1617" layoutX="128.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="120 KCal">
+                     <font>
+                        <Font name="League Spartan Light" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView id="images" fitHeight="110.0" fitWidth="136.0" layoutX="417.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/workout_sample.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="136.0" layoutX="734.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/workout_sample.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="136.0" layoutX="1049.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/workout_sample.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="136.0" layoutX="417.0" layoutY="646.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/workout_sample.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="136.0" layoutX="734.0" layoutY="646.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/workout_sample.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="136.0" layoutX="1048.0" layoutY="646.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/workout_sample.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

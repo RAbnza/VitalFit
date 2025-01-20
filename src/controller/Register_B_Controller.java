@@ -75,7 +75,7 @@ public class Register_B_Controller {
     	//TODO: Add the values to the database
     	
     	
-    	//Change to Register_B
+    	//Change to Register_C
         try {
             // Load the Balance Due FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Register_C.fxml"));
