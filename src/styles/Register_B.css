@@ -1,0 +1,90 @@
+
+.TxtField{
+	-fx-padding: 0 0 0 40px;
+}
+
+.NextBtn {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #92A3FD, #9DCEFF);
+    -fx-padding: 10px 20px; 
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1);
+}
+
+.NextBtn:pressed {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #7283DC, #7BACDE);
+    -fx-effect: none;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-font-family: 'Poppins'; 
+    -fx-font-size: 12px; 
+    -fx-padding: 0 10px 0 32px; 
+    -fx-border-width: 1px; 
+    -fx-border-color: #d0d0d0;
+    -fx-border-radius: 5px; 
+    -fx-effect: innershadow( gaussian, rgba(0, 0, 0, 0.2), 3, 0.0, 0, 1 );
+}
+
+
+/* Style the text inside ComboBox (when not focused and empty) */
+.combo-box .editable .text {
+    -fx-text-fill: #A8A8A8; 
+}
+
+
+/* Style list cells (dropdown items) */
+.combo-box .cell {
+    -fx-font-family: 'Poppins'; 
+    -fx-font-size: 12px;
+}
+
+/* Style focused state (blue border) */
+.combo-box .focused {
+    -fx-border-color: #0078d4;
+}
+
+/* Style the text color inside ComboBox when there is input */
+.combo-box .editable .text:filled {
+    -fx-text-fill: black; 
+}
+
+/* Style the DatePicker */
+.date-picker {
+    -fx-background-color: white; 
+    -fx-font-family: 'Poppins'; 
+    -fx-font-size: 12px; 
+    -fx-padding: 0 10px; 
+    -fx-border-width: 1px; 
+    -fx-border-color: #d0d0d0; 
+    -fx-border-radius: 5px;
+    -fx-effect: innershadow( gaussian, rgba(0, 0, 0, 0.2), 3, 0.0, 0, 1 ); 
+}
+
+/* Add padding to the left (specific left padding of 40px) */
+.date-picker .text-field {
+    -fx-padding: 0 0 0 32px; 
+}
+
+/* Style the prompt text inside the DatePicker (same as ComboBox prompt text) */
+.date-picker .text-field .prompt-text {
+    -fx-font-family: 'Poppins'; 
+    -fx-font-size: 12px; 
+    -fx-text-fill: #A8A8A8;
+}
+
+/* Style the text inside DatePicker (when not focused and empty) */
+.date-picker .text-field .text {
+    -fx-text-fill: #A8A8A8;
+}
+
+/* Remove background from the calendar button */
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+
+/* Style the text color inside DatePicker when there is input */
+.date-picker .text-field .text:filled {
+    -fx-text-fill: black; 
+}
+

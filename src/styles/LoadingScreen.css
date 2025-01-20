@@ -1,10 +1,10 @@
 .GetStartedBtn {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #92A3FD, #9DCEFF);
-    -fx-padding: 10px 20px; /* Optional: Adjust padding */
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); /* Optional: Add a shadow */
+    -fx-padding: 10px 20px; 
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); 
 }
 
 .GetStartedBtn:pressed {
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #7283DC, #7BACDE); /* Darker colors */
-    -fx-effect: none; /* Remove shadow to simulate being "pressed in" */
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #7283DC, #7BACDE);
+    -fx-effect: none; 
 }
