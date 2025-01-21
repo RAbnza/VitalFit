@@ -1,6 +1,11 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,6 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -34,6 +41,7 @@ public class Register_A_Controller {
     private TextField usernameTxtField;
     
     private static String tempUsername;//temoraray storage
+    private static final String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
     @FXML
     public void initialize() {
@@ -48,21 +56,53 @@ public class Register_A_Controller {
     	tempUsername = usernameTxtField.getText();
     	
     	
-    	//Change to Register_B
-        try {
-            // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Register_B.fxml"));
-            Parent Register_BRoot = loader.load();
+    	   // Check if the user exist in db
+        boolean isUsernameTaken = false;
 
-            // Get the current stage (window) from the event source
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        try (Connection conn = DriverManager.getConnection(DB_PATH)) {
+            // Query to check user already exists
+            String query = "SELECT COUNT(*) FROM users WHERE username = ?";
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, tempUsername);
 
-            // Set the new scene
-            Scene scene = new Scene(Register_BRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
+            // Execute 
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                if (count > 0) {
+                    // Username exists show error 
+                    isUsernameTaken = true;
+                }
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
+        }
+
+        // If username is taken show error message 
+        if (isUsernameTaken) {
+            // error message if the username is already taken
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Username Error");
+            alert.setHeaderText(null);
+            alert.setContentText("The username is already taken. Please choose another one.");
+            alert.showAndWait();
+        } else {
+            // If username is not taken - proceed
+            try {
+                // Load the Register_B FXML file
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Register_B.fxml"));
+                Parent Register_BRoot = loader.load();
+
+                // Get the current stage (window) from the event source
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene
+                Scene scene = new Scene(Register_BRoot);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     
