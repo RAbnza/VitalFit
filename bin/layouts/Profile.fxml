@@ -30,7 +30,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField fx:id="nameTxtField" disable="true" editable="false" layoutX="687.0" layoutY="260.0" onAction="#nameTxtField_Clicked" prefHeight="48.0" prefWidth="315.0" promptText="Name" styleClass="TxtField" stylesheets="@../styles/Profile.css" text="AAAAAAAA">
+            <TextField fx:id="nameTxtField" layoutX="687.0" layoutY="260.0" onAction="#nameTxtField_Clicked" prefHeight="48.0" prefWidth="315.0" promptText="Name" styleClass="TxtField" stylesheets="@../styles/Profile.css">
                <font>
                   <Font name="Poppins Regular" size="12.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Image url="@../../Resources/Images/Profile%20Icon%20(Darker).png" />
                </image>
             </ImageView>
-            <ComboBox fx:id="genderCmbBox" disable="true" layoutX="687.0" layoutY="323.0" onAction="#genderCmbBox_onAction" prefHeight="48.0" prefWidth="315.0" promptText="Choose Gender" stylesheets="@../styles/Profile.css">
+            <ComboBox fx:id="genderCmbBox" layoutX="687.0" layoutY="323.0" onAction="#genderCmbBox_onAction" prefHeight="48.0" prefWidth="315.0" promptText="Choose Gender" stylesheets="@../styles/Profile.css">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -53,8 +53,8 @@
                   <Image url="@../../Resources/Images/Gender%20Icon.png" />
                </image>
             </ImageView>
-            <DatePicker fx:id="datePicker" disable="true" editable="false" layoutX="687.0" layoutY="386.0" onAction="#datePicker_onAction" prefHeight="48.0" prefWidth="315.0" promptText="Date of Birth" stylesheets="@../styles/Profile.css" />
-            <TextField fx:id="weightTxtField" disable="true" editable="false" layoutX="687.0" layoutY="449.0" prefHeight="48.0" prefWidth="252.0" promptText="Weight" styleClass="TxtField" stylesheets="@../styles/Profile.css">
+            <DatePicker fx:id="datePicker" layoutX="687.0" layoutY="386.0" onAction="#datePicker_onAction" prefHeight="48.0" prefWidth="315.0" promptText="Date of Birth" stylesheets="@../styles/Profile.css" />
+            <TextField fx:id="weightTxtField" layoutX="687.0" layoutY="449.0" prefHeight="48.0" prefWidth="252.0" promptText="Weight" styleClass="TxtField" stylesheets="@../styles/Profile.css">
                <font>
                   <Font name="Poppins Regular" size="12.0" />
                </font>
@@ -62,7 +62,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <TextField fx:id="heightTxtField" disable="true" editable="false" layoutX="687.0" layoutY="512.0" prefHeight="48.0" prefWidth="252.0" promptText="Height" styleClass="TxtField" stylesheets="@../styles/Profile.css">
+            <TextField fx:id="heightTxtField" layoutX="687.0" layoutY="512.0" prefHeight="48.0" prefWidth="252.0" promptText="Height" styleClass="TxtField" stylesheets="@../styles/Profile.css">
                <font>
                   <Font name="Poppins Regular" size="12.0" />
                </font>
@@ -70,7 +70,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <TextField fx:id="bmiTxtField" disable="true" editable="false" layoutX="687.0" layoutY="575.0" prefHeight="48.0" prefWidth="315.0" styleClass="TxtField" stylesheets="@../styles/Profile.css" text="Calculated BMI: ">
+            <TextField fx:id="bmiTxtField" editable="false" layoutX="687.0" layoutY="575.0" prefHeight="48.0" prefWidth="315.0" styleClass="TxtField" stylesheets="@../styles/Profile.css" text="Calculated BMI: ">
                <font>
                   <Font name="Poppins Regular" size="12.0" />
                </font>
@@ -177,6 +177,30 @@
             <Button fx:id="logoutBtn" layoutX="78.0" layoutY="714.0" mnemonicParsing="false" onAction="#logoutBtn_Clicked" prefHeight="13.0" prefWidth="98.0" style="-fx-background-radius: 99;" styleClass="Btn2" stylesheets="@../styles/Dashboard.css" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Poppins Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="BeginnerBtn" layoutX="381.0" layoutY="493.0" mnemonicParsing="false" onAction="#BeginnerBtn_Clicked" prefHeight="38.0" prefWidth="200.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Beginner" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Poppins SemiBold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="IntermediateBtn" layoutX="381.0" layoutY="541.0" mnemonicParsing="false" onAction="#IntermediateBtn_Clicked" prefHeight="38.0" prefWidth="200.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Intermediate" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Poppins SemiBold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="AdvancedBtn" layoutX="381.0" layoutY="589.0" mnemonicParsing="false" onAction="#AdvancedBtn_Clicked" prefHeight="38.0" prefWidth="200.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Advanced" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Poppins SemiBold" size="12.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
