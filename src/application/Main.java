@@ -32,7 +32,7 @@ public class Main extends Application {
                 System.out.println("Icon file not found at: " + iconFile.getAbsolutePath());
             }
 
-            // Show the stage9
+            // Show the stage
             primaryStage.setScene(scene);
             primaryStage.show();
             
