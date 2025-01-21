@@ -120,6 +120,7 @@ public class Register_B_Controller {
     @FXML
     void getBMIBtn_Clicked(ActionEvent event) {
     	//TODO: Compute the BMI
+    	//Weight / Height^2 = BMI
     }
 
     @FXML
