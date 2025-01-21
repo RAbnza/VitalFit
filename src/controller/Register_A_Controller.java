@@ -32,6 +32,8 @@ public class Register_A_Controller {
 
     @FXML
     private TextField usernameTxtField;
+    
+    private static String tempUsername;//temoraray storage
 
     @FXML
     public void initialize() {
@@ -43,7 +45,7 @@ public class Register_A_Controller {
     @FXML
     void NextBtn_Clicked(ActionEvent event) {
     	
-    	//TODO: Add the username to Database
+    	tempUsername = usernameTxtField.getText();
     	
     	
     	//Change to Register_B
@@ -62,6 +64,11 @@ public class Register_A_Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    // Getter for the temporary username
+    public static String getTempUsername() {
+        return tempUsername;
     }
 
     @FXML

@@ -49,6 +49,14 @@ public class Register_B_Controller {
 
     @FXML
     private TextField weightTxtField;
+    
+    // Temporary storage for the data
+    private static String tempName;
+    private static String tempGender;
+    private static String tempDateOfBirth;
+    private static double tempWeight;
+    private static double tempHeight;
+    private static double tempBMI;
 
     @FXML
     public void initialize() {
@@ -72,7 +80,13 @@ public class Register_B_Controller {
     
     @FXML
     void NextBtn_Clicked(ActionEvent event) {
-    	//TODO: Add the values to the database
+        // Store user data temporarily
+        tempName = nameTxtField.getText();
+        tempGender = genderCmbBox.getValue();
+        tempDateOfBirth = datePicker.getValue().toString();
+        tempWeight = Double.parseDouble(weightTxtField.getText());
+        tempHeight = Double.parseDouble(heightTxtField.getText());
+        tempBMI = Double.parseDouble(bmiTxtField.getText());
     	
     	
     	//Change to Register_C
@@ -119,13 +133,41 @@ public class Register_B_Controller {
 
     @FXML
     void getBMIBtn_Clicked(ActionEvent event) {
-    	//TODO: Compute the BMI
-    	//Weight / Height^2 = BMI
+    	double weight = Double.parseDouble(weightTxtField.getText());
+        double height = Double.parseDouble(heightTxtField.getText()) / 100; // Convert to METERS
+
+        double bmi = weight / (height * height);
+        bmiTxtField.setText(String.format("%.2f", bmi)); // Display BMI 
     }
 
     @FXML
     void nameTxtField_Clicked(ActionEvent event) {
     	
+    }
+    
+    // Getter methods for the temporary data
+    public static String getTempName() {
+        return tempName;
+    }
+
+    public static String getTempGender() {
+        return tempGender;
+    }
+
+    public static String getTempDateOfBirth() {
+        return tempDateOfBirth;
+    }
+
+    public static double getTempWeight() {
+        return tempWeight;
+    }
+
+    public static double getTempHeight() {
+        return tempHeight;
+    }
+
+    public static double getTempBMI() {
+        return tempBMI;
     }
 
 }
