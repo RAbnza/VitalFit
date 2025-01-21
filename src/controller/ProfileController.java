@@ -143,12 +143,16 @@ public class ProfileController {
 
     @FXML
     void editDifficultyBtn_Clicked(ActionEvent event) {
-
+    	
     }
 
     @FXML
     void editProfileBtn_Clicked(ActionEvent event) {
-
+    	
+    	nameTxtField.setDisable(false);
+    	nameTxtField.setEditable(true);
+    	
+    	
     }
 
     @FXML
