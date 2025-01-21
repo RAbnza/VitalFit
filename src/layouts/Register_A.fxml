@@ -7,7 +7,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Register_A_Controller">
    <children>
@@ -31,7 +36,7 @@
                   <Image url="@../../Resources/Images/Profile%20Icon.png" />
                </image>
             </ImageView>
-            <Button fx:id="NextBtn" layoutX="756.0" layoutY="459.0" mnemonicParsing="false" onAction="#NextBtn_Clicked" prefHeight="60.0" prefWidth="262.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Register_A.css" text="Next" textFill="WHITE">
+            <Button fx:id="NextBtn" layoutX="756.0" layoutY="434.0" mnemonicParsing="false" onAction="#NextBtn_Clicked" prefHeight="60.0" prefWidth="262.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Register_A.css" text="Next" textFill="WHITE">
                <font>
                   <Font name="Poppins Bold" size="16.0" />
                </font>
@@ -39,6 +44,53 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Text layoutX="749.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already Have an Account?">
+               <font>
+                  <Font name="Poppins Regular" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="go_to_loginBtn" layoutX="942.0" layoutY="538.0" onMouseClicked="#go_to_loginBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to Login">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Line endX="45.199951171875" layoutX="979.0" layoutY="544.0" startX="-38.4000244140625" strokeLineCap="ROUND">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Line>
          </children>
       </AnchorPane>
    </children>
