@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,19 +17,19 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Register_A_Controller {
+public class Sign_In_Controller {
 
     @FXML
-    private Button NextBtn;
+    private Button LoginBtn;
 
     @FXML
     private AnchorPane anchorPane;
 
     @FXML
     private ImageView background;
-    
+
     @FXML
-    private Text go_to_loginBtn;
+    private Text registerBtn;
 
     @FXML
     private TextField usernameTxtField;
@@ -37,60 +38,61 @@ public class Register_A_Controller {
     public void initialize() {
         // Request focus on the anchorPane to prevent auto-focus on the TextField
     	usernameTxtField.setFocusTraversable(false); 
-    	NextBtn.setFocusTraversable(false); 
-    }
-    
-    @FXML
-    void NextBtn_Clicked(ActionEvent event) {
-    	
-    	//TODO: Add the username to Database
-    	
-    	
-    	//Change to Register_B
-        try {
-            // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Register_B.fxml"));
-            Parent Register_BRoot = loader.load();
-
-            // Get the current stage (window) from the event source
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(Register_BRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    void background_Clicked(MouseEvent event) {
-    	usernameTxtField.setFocusTraversable(false); 
-    	NextBtn.setFocusTraversable(false); 
+    	registerBtn.setFocusTraversable(false); 
+    	LoginBtn.setFocusTraversable(false); 
     	anchorPane.requestFocus();
     }
     
     @FXML
-    void go_to_loginBtn_Clicked(MouseEvent event) {
+    void LoginBtn_Clicked(ActionEvent event) {
     	
-    	//Change to Sign In
+    	//Change to Dashboard
         try {
             // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Sign_In.fxml"));
-            Parent Sign_InRoot = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Dashboard.fxml"));
+            Parent DashboardRoot = loader.load();
 
             // Get the current stage (window) from the event source
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             // Set the new scene
-            Scene scene = new Scene(Sign_InRoot);
+            Scene scene = new Scene(DashboardRoot);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
-       
+        
+    }
+
+    @FXML
+    void background_Clicked(MouseEvent event) {
+        // Request focus on the anchorPane to prevent auto-focus on the TextField
+    	usernameTxtField.setFocusTraversable(false); 
+    	registerBtn.setFocusTraversable(false); 
+    	LoginBtn.setFocusTraversable(false); 
+    	anchorPane.requestFocus();
+    }
+
+    @FXML
+    void registerBtn_Clicked(MouseEvent event) {
+    	
+    	//Change to Register_A
+        try {
+            // Load the Balance Due FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Register_A.fxml"));
+            Parent Register_ARoot = loader.load();
+
+            // Get the current stage (window) from the event source
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Set the new scene
+            Scene scene = new Scene(Register_ARoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
