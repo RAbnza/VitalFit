@@ -129,18 +129,13 @@ public class DashboardController {
 
     @FXML
     void profileBtn_Clicked(MouseEvent event) {
-    	
-    	//Change to Profile
-        try {
-            // Load the Balance Due FXML file
+    	try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Profile.fxml"));
-            Parent ProfileRoot = loader.load();
+            Parent profileRoot = loader.load();
 
-            // Get the current stage (window) from the event source
+            // Switch scene
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(ProfileRoot);
+            Scene scene = new Scene(profileRoot);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

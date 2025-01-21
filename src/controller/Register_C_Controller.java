@@ -90,6 +90,7 @@ public class Register_C_Controller {
 
             // Execute the update to save the user data
             int result = pst.executeUpdate();
+            SessionManager.getInstance().setUsername(username);
 
             // Check if data was inserted successfully
             if (result > 0) {
@@ -113,10 +114,11 @@ public class Register_C_Controller {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Dashboard.fxml"));
             Parent DashboardRoot = loader.load();
 
-            // Get the current stage (window) from the event source
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Get the DashboardController
+            DashboardController dashboardController = loader.getController();
 
-            // Set the new scene
+            // Switch scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(DashboardRoot);
             stage.setScene(scene);
             stage.show();

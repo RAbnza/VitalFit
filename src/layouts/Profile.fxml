@@ -182,6 +182,30 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="BeginnerBtn" layoutX="381.0" layoutY="493.0" mnemonicParsing="false" onAction="#BeginnerBtn_Clicked" prefHeight="38.0" prefWidth="200.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Beginner" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Poppins SemiBold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="IntermediateBtn" layoutX="381.0" layoutY="541.0" mnemonicParsing="false" onAction="#IntermediateBtn_Clicked" prefHeight="38.0" prefWidth="200.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Intermediate" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Poppins SemiBold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="AdvancedBtn" layoutX="381.0" layoutY="589.0" mnemonicParsing="false" onAction="#AdvancedBtn_Clicked" prefHeight="38.0" prefWidth="200.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Advanced" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Poppins SemiBold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
       <Text fx:id="prorfileBtn" fill="#475569" onMouseClicked="#prorfileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">

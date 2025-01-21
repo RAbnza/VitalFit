@@ -55,7 +55,15 @@ public class Sign_In_Controller {
     @FXML
     void LoginBtn_Clicked(ActionEvent event) {
         // Get the username entered by the user from a TextField
-        String enteredUsername = usernameTxtField.getText();
+        String enteredUsername = usernameTxtField.getText().trim();
+        SessionManager.getInstance().setUsername(enteredUsername);
+
+        // Validate the entered username
+        if (enteredUsername.isEmpty()) {
+            showAlert("Login Error", "Username cannot be empty. Please enter a valid username.");
+            return;
+        }
+
         // Check if the username exists in the database
         boolean isValidUsername = false;
 
@@ -69,40 +77,46 @@ public class Sign_In_Controller {
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
                 int count = rs.getInt(1);
-                if (count > 0) {
-                    // Username found, proceed to the dashboard
-                    isValidUsername = true;
-                }
+                isValidUsername = count > 0; // Username exists if count > 0
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Database Error", "An error occurred while connecting to the database.");
+            return;
         }
 
         // If username is valid, proceed to the Dashboard
         if (isValidUsername) {
-            try {
-                // Load the Dashboard FXML file
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Dashboard.fxml"));
-                Parent DashboardRoot = loader.load();
-
-                // Get the current stage (window) from the event source
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                // Set the new scene
-                Scene scene = new Scene(DashboardRoot);
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            navigateToDashboard(event);
         } else {
             // Show an error message if the username is not found
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Login Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Invalid username. Please try again.");
-            alert.showAndWait();
+            showAlert("Login Error", "Invalid username. Please try again.");
         }
+    }
+
+    private void navigateToDashboard(ActionEvent event) {
+        try {
+            // Load the Dashboard FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Dashboard.fxml"));
+            Parent DashboardRoot = loader.load();
+
+            // Set the new scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(DashboardRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Navigation Error", "An error occurred while loading the Dashboard.");
+        }
+    }
+
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 
     @FXML
