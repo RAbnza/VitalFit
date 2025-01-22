@@ -28,6 +28,9 @@ public class DashboardController {
 
     @FXML
     private Text dashboardBtn;
+    
+    @FXML
+    private Text finishedWorkoutsText;
 
     @FXML
     private Text heightText;
@@ -37,6 +40,9 @@ public class DashboardController {
 
     @FXML
     private Text nameText;
+    
+    @FXML
+    private Text physicalLevelText;
 
     @FXML
     private Text progressBtn;
@@ -100,6 +106,9 @@ public class DashboardController {
 
     @FXML
     private Text resourcesBtn;
+    
+    @FXML
+    private Text totalDaysText;
 
     @FXML
     private Text weightText;
@@ -145,7 +154,18 @@ public class DashboardController {
 
     @FXML
     void resourcesBtn_Clicked(MouseEvent event) {
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Resources.fxml"));
+            Parent ResourcesRoot = loader.load();
 
+            // Switch scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(ResourcesRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

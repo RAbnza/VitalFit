@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ResourcesController">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="780.0" prefWidth="1200.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="780.0" fitWidth="1200.0" onMouseClicked="#background_Clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/Resources.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutBtn" layoutX="78.0" layoutY="714.0" mnemonicParsing="false" onAction="#logoutBtn_Clicked" prefHeight="13.0" prefWidth="98.0" style="-fx-background-radius: 99;" styleClass="Btn2" stylesheets="@../styles/Dashboard.css" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Text fx:id="dashboardBtn" fill="#475569" layoutX="78.0" layoutY="132.0" onMouseClicked="#dashboardBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Text>
+            <Text fx:id="profileBtn" fill="#475569" layoutX="78.0" layoutY="197.0" onMouseClicked="#profileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="workoutPlanBtn" fill="#475569" layoutX="78.0" layoutY="261.0" onMouseClicked="#workoutPlanBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Workout Plan">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="progressBtn" fill="#475569" layoutX="78.0" layoutY="325.0" onMouseClicked="#progressBtn" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="resourcesBtn" fill="WHITE" layoutX="78.0" layoutY="389.0" onMouseClicked="#resourcesBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Resources">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <ScrollPane fx:id="resourcesScrollPane" layoutX="235.0" layoutY="174.0" prefHeight="606.0" prefWidth="965.0" stylesheets="@../styles/Resources.css">
+               <content>
+                  <AnchorPane prefHeight="3547.0" prefWidth="946.0">
+                     <children>
+                        <Pane layoutX="636.0" layoutY="23.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="23.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fx:id="workoutBtn1" fitHeight="50.0" fitWidth="60.0" layoutX="104.0" layoutY="22.0" onMouseClicked="#workoutBtn1_Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/PlayButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="240.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fx:id="workoutBtn2" fitHeight="50.0" fitWidth="60.0" layoutX="104.0" layoutY="22.0" onMouseClicked="#workoutBtn2_Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/PlayButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="457.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fx:id="workoutBtn3" fitHeight="50.0" fitWidth="60.0" layoutX="104.0" layoutY="22.0" onMouseClicked="#workoutBtn3_Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/PlayButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="674.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                              <ImageView fx:id="workoutBtn4" fitHeight="50.0" fitWidth="60.0" layoutX="104.0" layoutY="22.0" onMouseClicked="#workoutBtn4_Clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/PlayButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="891.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111112" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111112" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211112" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="1108.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111113" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111113" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211113" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="1325.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1111131" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1111131" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12111131" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="1542.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11111311" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11111311" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121111311" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="1759.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111113111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111113111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211113111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="1976.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111114" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111114" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211114" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="2193.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1111141" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1111141" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12111141" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="2410.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11111411" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11111411" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121111411" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="2627.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111114111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111114111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211114111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="2844.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1111141111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1111141111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12111141111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="3061.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11111411111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11111411111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121111411111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="37.0" layoutY="3278.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_111114111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_111114111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1211114111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="23.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="240.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_112" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_112" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1212" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="457.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1121" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1121" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12121" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="674.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11211" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11211" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121211" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="891.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_112111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_112111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1212111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="1108.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1121111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1121111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12121111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="1325.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11211111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11211111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121211111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="1542.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_112111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_112111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1212111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="1759.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1121111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1121111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12121111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="1976.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11211111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11211111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121211111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="2193.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_112111111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_112111111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1212111111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="2410.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1121111111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1121111111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12121111111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="2627.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11211111111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11211111111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121211111111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="2844.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_112111111111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_112111111111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_1212111111111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="3061.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_1121111111111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_1121111111111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_12121111111111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="338.0" layoutY="3278.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <ImageView fitHeight="122.0" fitWidth="256.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Images/ResourcesIconpng.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="recommendation_title_text_11211111111111111" layoutX="10.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="15.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text fx:id="recommendation_duration_text_11211111111111111" fill="#1d1617" layoutX="11.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." wrappingWidth="229.31201171874977">
+                                 <font>
+                                    <Font name="League Spartan Light" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="recommendation_title_text_121211111111111111" fill="#475569" layoutX="10.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Easy" wrappingWidth="237.56800079345703">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="9.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

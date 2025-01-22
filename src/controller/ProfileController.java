@@ -66,13 +66,10 @@ public class ProfileController {
     private Text progressBtn;
 
     @FXML
-    private Text prorfileBtn;
+    private Text profileBtn;
 
     @FXML
-    private Text prorfileBtn1;
-
-    @FXML
-    private Text prorfileBtn11;
+    private Text NameText;
 
     @FXML
     private Text resourcesBtn;
@@ -99,7 +96,7 @@ public class ProfileController {
     
     public void setUsernameFromSession() {
         this.username = SessionManager.getInstance().getUsername();
-        prorfileBtn11.setText(username);
+        NameText.setText(username);
         populateProfileFields();
     }
     private void populateProfileFields() {
@@ -404,13 +401,24 @@ public class ProfileController {
     }
 
     @FXML
-    void prorfileBtn_Clicked(MouseEvent event) {
+    void profileBtn_Clicked(MouseEvent event) {
 
     }
 
     @FXML
     void resourcesBtn_Clicked(MouseEvent event) {
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Resources.fxml"));
+            Parent ResourcesRoot = loader.load();
 
+            // Switch scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(ResourcesRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
