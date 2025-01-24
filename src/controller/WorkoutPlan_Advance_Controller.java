@@ -36,9 +36,6 @@ public class WorkoutPlan_Advance_Controller {
     private Text numOfSetsText;
 
     @FXML
-    private ImageView playBtn;
-
-    @FXML
     private Text profileBtn;
 
     @FXML
@@ -79,11 +76,6 @@ public class WorkoutPlan_Advance_Controller {
 
     @FXML
     void markAsDoneBtn_Clicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void playBtn_Clicked(MouseEvent event) {
 
     }
 
