@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="780.0" prefWidth="1200.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="780.0" fitWidth="1200.0" onMouseClicked="#background_Clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/WorkoutCongratulations.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="goToProgressBtn" layoutX="561.0" layoutY="637.0" mnemonicParsing="false" onAction="#goToProgressBtn_Clicked" prefHeight="44.0" prefWidth="302.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Go to Progress" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Text fx:id="profileBtn" fill="#475569" layoutX="78.0" layoutY="197.0" onMouseClicked="#profileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="NameText" fill="#92a3fd" layoutX="497.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Completed the Workouts!" textAlignment="CENTER" wrappingWidth="420.07347106933594">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="workoutPlanBtn" fill="WHITE" layoutX="78.0" layoutY="261.0" onMouseClicked="#workoutPlanBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Workout Plan">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="progressBtn" fill="#475569" layoutX="78.0" layoutY="325.0" onMouseClicked="#progressBtn" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="resourcesBtn" fill="#475569" layoutX="78.0" layoutY="389.0" onMouseClicked="#resourcesBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Resources">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="dashboardBtn" fill="#475569" layoutX="78.0" layoutY="132.0" onMouseClicked="#dashboardBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Button fx:id="logoutBtn" layoutX="78.0" layoutY="714.0" mnemonicParsing="false" onAction="#logoutBtn_Clicked" prefHeight="13.0" prefWidth="98.0" style="-fx-background-radius: 99;" styleClass="Btn2" stylesheets="@../styles/Dashboard.css" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="goToDashboardBtn" layoutX="561.0" layoutY="572.0" mnemonicParsing="false" onAction="#goToDashboardBtn_Clicked" prefHeight="44.0" prefWidth="302.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Go to Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
