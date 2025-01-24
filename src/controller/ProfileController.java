@@ -411,6 +411,22 @@ public class ProfileController {
     @FXML
     void logoutBtn_Clicked(ActionEvent event) {
 
+        // Clear the session
+        SessionManager.getInstance().clearSession();
+
+        // Redirect to Login scene
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Sign_In.fxml"));
+            Parent loginRoot = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loginRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    	
     }
 
     @FXML
