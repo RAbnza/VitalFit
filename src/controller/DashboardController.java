@@ -221,7 +221,18 @@ public class DashboardController {
 
     @FXML
     void workoutPlanBtn_Clicked(MouseEvent event) {
+    	//TODO: Add Backend Here
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WorkoutPlan_Beginner.fxml"));
+            Parent WorkoutPlan_BeginnerRoot = loader.load();
 
+            // Switch scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(WorkoutPlan_BeginnerRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
 }
