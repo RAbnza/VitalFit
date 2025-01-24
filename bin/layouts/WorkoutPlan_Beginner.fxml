@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WorkoutPlan_Beginner_Controller">
    <children>
@@ -114,12 +114,7 @@
             </Button>
             <Pane layoutX="231.0" prefHeight="442.0" prefWidth="640.0" styleClass="pane" stylesheets="@../styles/WorkoutPlan.css">
                <children>
-                  <MediaView fx:id="workoutVideoFrame" fitHeight="360.0" fitWidth="640.0" layoutY="40.0" />
-                  <ImageView fx:id="playBtn" fitHeight="50.0" fitWidth="60.0" layoutX="295.0" layoutY="190.0" onMouseClicked="#playBtn_Clicked" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Resources/Images/PlayButton.png" />
-                     </image>
-                  </ImageView>
+                  <WebView fx:id="workoutVideoFrame" layoutY="41.0" prefHeight="360.0" prefWidth="640.0" />
                </children>
             </Pane>
             <Text fx:id="workoutDayText" layoutX="343.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="28.87701416015625">

@@ -1,4 +1,5 @@
-/controller/
 /application/
-/layouts/
+/controller/
 /database/
+/layouts/
+/styles/
