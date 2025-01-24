@@ -1,0 +1,53 @@
+
+.usernameTxtField{
+	-fx-padding: 0 0 0 40px;
+}
+
+.Btn {
+    -fx-background-image: url("Resources/Images/PlayButton.png"); /* Adjusted for resources in classpath */
+    -fx-background-size: cover; /* Ensures the image covers the button */
+    -fx-background-repeat: no-repeat; /* Prevent repeating the image */
+    -fx-background-position: center; /* Centers the image */
+    -fx-background-radius: 200px; /* Fully rounded corners for circular buttons */
+    -fx-padding: 10px; /* Adjust padding as needed */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); /* Optional shadow */
+}
+
+.Btn:pressed {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #7283DC, #7BACDE); 
+    -fx-effect: none; 
+}
+
+.Btn2 {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #EEA4CE, #C58BF2); /* Updated gradient colors */
+    -fx-padding: 10px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); /* Shadow effect */
+}
+
+.Btn2:pressed {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #D98DB9, #9C66B3); /* Darker gradient for pressed state */
+    -fx-effect: none; /* Remove shadow effect when pressed */
+}
+
+/* Target ScrollPane with fx:id 'resourcesScrollPane' */
+#resourcesScrollPane .scroll-bar:horizontal {
+    -fx-max-height: 0; /* Hides the horizontal scrollbar */
+}
+
+#resourcesScrollPane .scroll-bar:vertical {
+    -fx-pref-width: 8px; /* Thin scrollbar width */
+    -fx-background-color: transparent;
+}
+
+#resourcesScrollPane .scroll-bar .thumb {
+    -fx-background-color: #888; /* Thumb color */
+    -fx-background-radius: 4px; /* Rounded corners */
+}
+
+#resourcesScrollPane .scroll-bar .thumb:hover {
+    -fx-background-color: #555; /* Hover effect */
+}
+
+#resourcesScrollPane .scroll-bar .thumb:pressed {
+    -fx-background-color: #333; /* Press effect */
+}

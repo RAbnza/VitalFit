@@ -20,7 +20,7 @@ public class GetStartedController {
     void getStartedBtn_Clicked(ActionEvent event) {
         try {
             // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Register_A.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Sign_In.fxml"));
             Parent Register_ARoot = loader.load();
 
             // Get the current stage (window) from the event source

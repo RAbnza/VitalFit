@@ -98,7 +98,7 @@
                   <Image url="@../../Resources/Images/BMI%20Icon.png" />
                </image>
             </ImageView>
-            <Text fx:id="prorfileBtn1" fill="WHITE" layoutX="78.0" layoutY="197.0" onMouseClicked="#prorfileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+            <Text fx:id="profileBtn" fill="WHITE" layoutX="78.0" layoutY="197.0" onMouseClicked="#profileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
                <font>
                   <Font name="Manrope SemiBold" size="14.0" />
                </font>
@@ -106,7 +106,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text fx:id="prorfileBtn11" layoutX="345.0" layoutY="402.0" onMouseClicked="#prorfileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Name&gt;" textAlignment="CENTER" wrappingWidth="272.87339782714844">
+            <Text fx:id="NameText" layoutX="345.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Name&gt;" textAlignment="CENTER" wrappingWidth="272.87339782714844">
                <font>
                   <Font name="Poppins Medium" size="20.0" />
                </font>
@@ -208,13 +208,5 @@
             </Button>
          </children>
       </AnchorPane>
-      <Text fx:id="prorfileBtn" fill="#475569" onMouseClicked="#prorfileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
-         <font>
-            <Font name="Manrope SemiBold" size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Text>
    </children>
 </HBox>
