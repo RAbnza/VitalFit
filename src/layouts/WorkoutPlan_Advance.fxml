@@ -485,7 +485,7 @@
                         </Text>
                         <Pane layoutX="32.0" layoutY="106.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warm-Up" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -508,7 +508,7 @@
                               </Text>
                               <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -569,7 +569,7 @@
                         </Text>
                         <Pane layoutX="32.0" layoutY="256.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bench Press" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -592,7 +592,7 @@
                               </Text>
                               <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -624,7 +624,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="356.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pull-Up" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -645,9 +645,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -679,7 +679,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="456.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Overhead Press" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -700,9 +700,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -734,7 +734,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="556.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dips" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -755,9 +755,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -818,7 +818,7 @@
                         </Text>
                         <Pane layoutX="32.0" layoutY="706.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Barbell Squat" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -841,7 +841,7 @@
                               </Text>
                               <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -873,7 +873,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="806.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadlift" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -894,9 +894,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -928,7 +928,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="906.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bulgarian Split Squat" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -949,9 +949,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3'" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -983,7 +983,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="1006.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weighted Calf Raises" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1004,9 +1004,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1067,7 +1067,7 @@
                         </Text>
                         <Pane layoutX="32.0" layoutY="1156.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sprint Intervals" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1090,7 +1090,7 @@
                               </Text>
                               <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1122,7 +1122,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="1256.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hanging Knee Raise" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1143,9 +1143,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1177,9 +1177,9 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="1356.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plank with Shoulder Taps" wrappingWidth="129.71557617187506">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="18.0" />
+                                    <Font name="Poppins SemiBold" size="16.0" />
                                  </font>
                                  <fill>
                                     <LinearGradient endX="1.0" endY="1.0">
@@ -1198,9 +1198,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1232,7 +1232,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="1456.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine Ball Slams" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1253,9 +1253,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1316,7 +1316,7 @@
                         </Text>
                         <Pane layoutX="32.0" layoutY="1606.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yoga" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1339,7 +1339,7 @@
                               </Text>
                               <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1400,7 +1400,7 @@
                         </Text>
                         <Pane layoutX="32.0" layoutY="1756.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kettlebell Swings" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1423,7 +1423,7 @@
                               </Text>
                               <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1455,7 +1455,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="1856.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Box Jumps" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1476,9 +1476,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1510,7 +1510,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="1956.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Farmers Carry" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1531,9 +1531,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1565,7 +1565,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="2056.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Battle Ropes" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1586,9 +1586,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1649,7 +1649,7 @@
                         </Text>
                         <Pane layoutX="32.0" layoutY="2206.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clean And Press" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1672,7 +1672,7 @@
                               </Text>
                               <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1704,9 +1704,9 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="2306.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Barbell Squat to Overhead Press" wrappingWidth="129.71557617187506">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="18.0" />
+                                    <Font name="Poppins SemiBold" size="16.0" />
                                  </font>
                                  <fill>
                                     <LinearGradient endX="1.0" endY="1.0">
@@ -1725,9 +1725,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1759,7 +1759,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="2406.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weighted Pull- Ups" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1780,9 +1780,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -1814,7 +1814,7 @@
                         </Pane>
                         <Pane layoutX="32.0" layoutY="2506.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
-                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" wrappingWidth="129.71557617187506">
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadlift" wrappingWidth="129.71557617187506">
                                  <font>
                                     <Font name="Poppins SemiBold" size="18.0" />
                                  </font>
@@ -1835,9 +1835,9 @@
                                     </LinearGradient>
                                  </fill>
                               </Text>
-                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
                                  <font>
-                                    <Font name="Poppins SemiBold" size="41.0" />
+                                    <Font name="Poppins SemiBold" size="37.0" />
                                  </font>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
