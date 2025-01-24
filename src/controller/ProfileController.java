@@ -318,11 +318,14 @@ public class ProfileController {
         String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
         try (Connection conn = DriverManager.getConnection(DB_PATH)) {
-            String query = "UPDATE users SET user_level = ? WHERE username = ?";
+            String query = "UPDATE users SET user_level = ?, workout_day = ?, current_workout = ?, workout_done = ? WHERE username = ?";
             PreparedStatement pst = conn.prepareStatement(query);
 
             pst.setString(1, userLevel);
-            pst.setString(2, username);
+            pst.setString(2, "1");
+            pst.setNull(3, java.sql.Types.VARCHAR);
+            pst.setString(4, "1");
+            pst.setString(5, username);
 
             int result = pst.executeUpdate();
             return result > 0; // Returns true if the update was successful
