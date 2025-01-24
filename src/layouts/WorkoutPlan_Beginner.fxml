@@ -115,11 +115,6 @@
             <Pane layoutX="231.0" prefHeight="442.0" prefWidth="640.0" styleClass="pane" stylesheets="@../styles/WorkoutPlan.css">
                <children>
                   <WebView fx:id="workoutVideoFrame" layoutY="41.0" prefHeight="360.0" prefWidth="640.0" />
-                  <ImageView fx:id="playBtn" fitHeight="50.0" fitWidth="60.0" layoutX="295.0" layoutY="190.0" onMouseClicked="#playBtn_Clicked" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Resources/Images/PlayButton.png" />
-                     </image>
-                  </ImageView>
                </children>
             </Pane>
             <Text fx:id="workoutDayText" layoutX="343.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="28.87701416015625">

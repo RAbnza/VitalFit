@@ -324,7 +324,7 @@ public class ProfileController {
             pst.setString(1, userLevel);
             pst.setString(2, "1");
             pst.setNull(3, java.sql.Types.VARCHAR);
-            pst.setString(4, "1");
+            pst.setString(4, "0");
             pst.setString(5, username);
 
             int result = pst.executeUpdate();
