@@ -43,6 +43,9 @@ public class WorkoutPlan_Beginner_Controller {
     private Text numOfSetsText;
 
     @FXML
+    private ImageView playBtn;
+
+    @FXML
     private Text profileBtn;
 
     @FXML
@@ -65,7 +68,7 @@ public class WorkoutPlan_Beginner_Controller {
 
     @FXML
     private MediaView workoutVideoFrame;
-
+    
     @FXML
     void background_Clicked(MouseEvent event) {
 
@@ -99,6 +102,11 @@ public class WorkoutPlan_Beginner_Controller {
     @FXML
     void markAsDoneBtn_Clicked(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void playBtn_Clicked(MouseEvent event) {
+    	
     }
 
     @FXML
