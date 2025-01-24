@@ -70,9 +70,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <ScrollPane fx:id="resourcesScrollPane" layoutX="235.0" layoutY="174.0" prefHeight="606.0" prefWidth="965.0" stylesheets="@../styles/Resources.css">
+            <ScrollPane fx:id="resourcesScrollPane" layoutX="233.0" layoutY="174.0" prefHeight="606.0" prefWidth="968.0" stylesheets="@../styles/Resources.css">
                <content>
-                  <AnchorPane prefHeight="3547.0" prefWidth="946.0">
+                  <AnchorPane prefHeight="3547.0" prefWidth="946.0" style="-fx-background-color: WHITE;">
                      <children>
                         <Pane layoutX="636.0" layoutY="23.0" prefHeight="201.0" prefWidth="257.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                            <children>
