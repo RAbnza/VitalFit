@@ -76,16 +76,10 @@ public class WorkoutPlan_Beginner_Controller {
 
     @FXML
     private WebView workoutVideoFrame;
-    
-    private int currentVideoIndex = 0;
-    
+       
     private int workoutProgress = 0;
     
-    private List<String> WorkoutTitle = Arrays.asList(
-    		
-    		);
-    
-    
+      
     private List<String> warmUpURL = Arrays.asList(
     		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1"
     		);
@@ -100,14 +94,14 @@ public class WorkoutPlan_Beginner_Controller {
     	    "https://www.youtube.com/embed/iIUe1oLbc8c?autoplay=1",
     	    
     	    //Day #2:
-    	    "https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
+    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
     	    "https://www.youtube.com/embed/DHji82G0E-0?autoplay=1",
     	    "https://www.youtube.com/embed/ci3lXPAOcuc?autoplay=1",
     	    "https://www.youtube.com/embed/p3DnicY_Y3w?autoplay=1",
     	    "https://www.youtube.com/embed/vD7Y_QbUmRs?autoplay=1",
     	    
     	    //Day #3:
-    	    "https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
+    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
     	    "https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
     );
     
@@ -145,7 +139,7 @@ public class WorkoutPlan_Beginner_Controller {
             String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
             try (Connection conn = DriverManager.getConnection(DB_PATH)) {
                 // Get the user's workout progress
-                String selectUserQuery = "SELECT workout_done FROM users WHERE username = ?";
+                String selectUserQuery = "SELECT workout_done, workout_day FROM users WHERE username = ?";
                 PreparedStatement selectPst = conn.prepareStatement(selectUserQuery);
                 selectPst.setString(1, username);
 
@@ -153,11 +147,12 @@ public class WorkoutPlan_Beginner_Controller {
 
                 if (userRs.next()) {
                     workoutProgress = userRs.getInt("workout_done");
+                    workoutDayText.setText(userRs.getString("workout_day"));
                 }
                 
                 userRs.close();
                 selectPst.close();
-
+                
                 // If workout progress is 0, play the warm-up video
                 if (workoutProgress == 0) {
                     // Play the first warm-up video
@@ -246,7 +241,7 @@ public class WorkoutPlan_Beginner_Controller {
             selectPst.setString(1, username);
 
             ResultSet userRs = selectPst.executeQuery();
-            int workoutProgress = 0;  // Make sure the progress is properly initialized
+            int workoutProgress = 0;  // Initialize workout progress
 
             if (userRs.next()) {
                 workoutProgress = userRs.getInt("workout_done");
@@ -255,17 +250,35 @@ public class WorkoutPlan_Beginner_Controller {
             userRs.close();
             selectPst.close();
 
-            // Step 3: Play the next workout video based on the updated progress
+            // Step 3: Determine the current workout day based on workoutProgress
+            int workoutDay = 0; // Default day initialization
+            if (workoutProgress >= 1 && workoutProgress <= 6) {
+                workoutDay = 1;
+            } else if (workoutProgress >= 7 && workoutProgress <= 11) {
+                workoutDay = 2;
+            } else if (workoutProgress == 12) {
+                workoutDay = 3;
+            }
+
+            // Update the workout_day in the users table
+            String updateDayQuery = "UPDATE users SET workout_day = ? WHERE username = ?";
+            PreparedStatement updateDayPst = conn.prepareStatement(updateDayQuery);
+            updateDayPst.setInt(1, workoutDay);
+            updateDayPst.setString(2, username);
+            updateDayPst.executeUpdate();
+            updateDayPst.close();
+
+            // Step 4: Play the next workout video based on the updated progress
             if (workoutProgress < beginnerURLs.size()) {
                 // Play the next workout video
                 playYouTubeVideo(beginnerURLs.get(workoutProgress));
 
-                // Step 4: Get the workout title and description from the workout_catalog table
+                // Step 5: Get the workout title and description from the workout_catalog table
                 String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
                 PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery);
-                
+
                 // Set the parameter to match the current workout ID (workoutProgress)
-                workoutPst.setInt(1, workoutProgress);  // Adjusting by +1 to match workout_id (assuming IDs are 1-based)
+                workoutPst.setInt(1, workoutProgress); // Assuming workout_id starts at 1
 
                 ResultSet workoutRs = workoutPst.executeQuery();
 
@@ -281,11 +294,16 @@ public class WorkoutPlan_Beginner_Controller {
             } else {
                 System.out.println("You have completed all beginner-level videos!");
             }
+
+            // Step 6: Update the workoutDayText UI element
+            workoutDayText.setText(String.valueOf(workoutDay));
+
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Error updating or retrieving workout progress.");
         }
     }
+
 
 
 
