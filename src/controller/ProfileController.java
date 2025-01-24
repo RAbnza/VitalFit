@@ -1,11 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -145,11 +142,11 @@ public class ProfileController {
         datePicker.setDisable(true);
     }
     
-    private boolean updateProfileInDatabase(String name, String gender, double height, double weight, double bmi) {
+    private boolean updateProfileInDatabase(String name, String gender, double height, double weight, double bmi, LocalDate dateOfBirth) {
         String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
         try (Connection conn = DriverManager.getConnection(DB_PATH)) {
-            String query = "UPDATE users SET user_name = ?, user_gender = ?, user_height = ?, user_weight = ?, user_bmi = ? WHERE username = ?";
+            String query = "UPDATE users SET user_name = ?, user_gender = ?, user_height = ?, user_weight = ?, user_bmi = ?, user_dateOfBirth = ? WHERE username = ?";
             PreparedStatement pst = conn.prepareStatement(query);
 
             // Set parameters
@@ -157,8 +154,9 @@ public class ProfileController {
             pst.setString(2, gender);
             pst.setDouble(3, height);
             pst.setDouble(4, weight);
-            pst.setDouble(5, bmi);        
-            pst.setString(6, username); // Use logged-in username
+            pst.setDouble(5, bmi);
+            pst.setDate(6, Date.valueOf(dateOfBirth));
+            pst.setString(7, username); // Use logged-in username
 
             // Execute the update
             int result = pst.executeUpdate();
@@ -169,6 +167,24 @@ public class ProfileController {
             return false;
         }
     }
+    
+    private void refreshPage(ActionEvent event) {
+        try {
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Load the current FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Profile.fxml"));
+            Parent root = loader.load();
+
+            // Set the scene with the refreshed root
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     public void initialize() {
@@ -347,14 +363,16 @@ public class ProfileController {
 
         // Add a save function on button click
         editProfileBtn.setOnAction(e -> {
+
             try {
                 // Validate inputs
                 String name = nameTxtField.getText().trim();
                 String gender = genderCmbBox.getValue();
                 double height = Double.parseDouble(heightTxtField.getText());
                 double weight = Double.parseDouble(weightTxtField.getText());
+                LocalDate dateOfBirth = datePicker.getValue(); // Get the date from DatePicker
 
-                if (height <= 0 || weight <= 0 || name.isEmpty() || gender == null) {
+                if (height <= 0 || weight <= 0 || name.isEmpty() || gender == null || dateOfBirth == null) {
                     throw new IllegalArgumentException("Invalid input: Please fill all fields correctly.");
                 }
 
@@ -362,12 +380,16 @@ public class ProfileController {
                 double bmi = weight / ((height / 100) * (height / 100)); // Height in meters
 
                 // Save to the database
-                if (updateProfileInDatabase(name, gender, height, weight, bmi)) {
+                if (updateProfileInDatabase(name, gender, height, weight, bmi, dateOfBirth)) {
                     System.out.println("Profile updated successfully!");
-
+                  
                     // Disable editing after saving
                     disableEditing();
                     editProfileBtn.setText("Edit Profile");
+                    
+                    // Refresh the current page
+                    refreshPage(event);
+                    
                 } else {
                     System.err.println("Failed to update the profile.");
                 }
@@ -378,6 +400,7 @@ public class ProfileController {
                 System.err.println(ex.getMessage());
             }
         });
+        	
     }
 
     @FXML
