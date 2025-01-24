@@ -115,7 +115,10 @@ public class DashboardController {
     private Text resourcesBtn;
 
     @FXML
-    private Text totalDaysText;
+    private Text TotalDaysText;
+    
+    @FXML
+    private Text TotalDaysText1;
 
     @FXML
     private Text weightText;
@@ -134,7 +137,7 @@ public class DashboardController {
         String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
         try (Connection conn = DriverManager.getConnection(DB_PATH)) {
-            String query = "SELECT user_name, user_dateOfBirth, user_height, user_weight, user_level FROM users WHERE username = ?";
+            String query = "SELECT user_name, user_dateOfBirth, user_height, user_weight, user_level, workout_day, workout_done FROM users WHERE username = ?";
             PreparedStatement pst = conn.prepareStatement(query);
             pst.setString(1, username);
 
@@ -146,6 +149,8 @@ public class DashboardController {
                 nameText.setText(rs.getString("user_name"));
                 heightText.setText(String.valueOf(rs.getDouble("user_height")));
                 weightText.setText(String.valueOf(rs.getDouble("user_weight")));
+                TotalDaysText.setText(rs.getString("workout_day"));
+                TotalDaysText1.setText(rs.getString("workout_done"));
                 PhysicalLevelText.setText(rs.getString("user_level"));
 
                 // Retrieve date of birth and compute age
