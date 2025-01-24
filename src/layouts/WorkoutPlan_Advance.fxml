@@ -1,0 +1,1872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WorkoutPlan_Advance_Controller">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="780.0" prefWidth="1200.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="780.0" fitWidth="1200.0" onMouseClicked="#background_Clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/WorkoutPlan.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="profileBtn" fill="#475569" layoutX="78.0" layoutY="197.0" onMouseClicked="#profileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text layoutX="255.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" wrappingWidth="89.677001953125">
+               <font>
+                  <Font name="Poppins SemiBold" size="38.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="workoutPlanBtn" fill="WHITE" layoutX="78.0" layoutY="261.0" onMouseClicked="#workoutPlanBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Workout Plan">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="progressBtn" fill="#475569" layoutX="78.0" layoutY="325.0" onMouseClicked="#progressBtn" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="resourcesBtn" fill="#475569" layoutX="78.0" layoutY="389.0" onMouseClicked="#resourcesBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Resources">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="dashboardBtn" fill="#475569" layoutX="78.0" layoutY="132.0" onMouseClicked="#dashboardBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Button fx:id="logoutBtn" layoutX="78.0" layoutY="714.0" mnemonicParsing="false" onAction="#logoutBtn_Clicked" prefHeight="13.0" prefWidth="98.0" style="-fx-background-radius: 99;" styleClass="Btn2" stylesheets="@../styles/Dashboard.css" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="markAsDoneBtn" layoutX="287.0" layoutY="650.0" mnemonicParsing="false" onAction="#markAsDoneBtn_Clicked" prefHeight="46.0" prefWidth="506.0" style="-fx-background-radius: 99;" styleClass="NextBtn" stylesheets="@../styles/Profile.css" text="Mark as Done" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Poppins SemiBold" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Pane layoutX="231.0" prefHeight="442.0" prefWidth="640.0" styleClass="pane" stylesheets="@../styles/WorkoutPlan.css">
+               <children>
+                  <WebView fx:id="workoutVideoFrame" layoutY="41.0" prefHeight="360.0" prefWidth="640.0" />
+               </children>
+            </Pane>
+            <Text fx:id="workoutDayText" layoutX="343.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="28.87701416015625">
+               <font>
+                  <Font name="Poppins SemiBold" size="38.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="NameText11" layoutX="370.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="28.87701416015625">
+               <font>
+                  <Font name="Poppins SemiBold" size="38.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="workoutTitleText" layoutX="388.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;Workout Title&gt;" wrappingWidth="482.47705078125">
+               <font>
+                  <Font name="Poppins Medium" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="255.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instruction:" wrappingWidth="148.07708740234375">
+               <font>
+                  <Font name="Poppins SemiBold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="276.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Set/s:" wrappingWidth="148.07708740234375">
+               <font>
+                  <Font name="Poppins Medium" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="276.0" layoutY="617.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration:" wrappingWidth="81.6771240234375">
+               <font>
+                  <Font name="Poppins Medium" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="durationText" layoutX="356.0" layoutY="617.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 Minute" wrappingWidth="490.4771728515625">
+               <font>
+                  <Font name="Poppins Medium" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="numOfSetsText" layoutX="424.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="426.47711181640625">
+               <font>
+                  <Font name="Poppins Medium" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Line endX="-100.0" endY="299.00006103515625" layoutX="972.0" layoutY="481.0" startX="-100.0" startY="-483.933349609375" style="-fx-opacity: 35%;" />
+            <Text layoutX="893.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About the Workout:" wrappingWidth="287.81024169921875">
+               <font>
+                  <Font name="Poppins SemiBold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="workoutDescriptionText" layoutX="893.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum" wrappingWidth="295.2772216796875">
+               <font>
+                  <Font name="Poppins Medium" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <ScrollPane layoutX="872.0" layoutY="275.0" prefHeight="505.0" prefWidth="328.0">
+               <content>
+                  <Pane prefHeight="2606.0" prefWidth="312.0">
+                     <stylesheets>
+                        <URL value="@../styles/Resources.css" />
+                        <URL value="@../styles/WorkoutPlan.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="scroll-bar" />
+                        <String fx:value="panel" />
+                     </styleClass>
+                     <children>
+                        <Text layoutX="23.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Workouts:" wrappingWidth="287.81024169921875">
+                           <font>
+                              <Font name="Poppins SemiBold" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Text layoutX="23.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warm-up" wrappingWidth="261.67706298828125">
+                           <font>
+                              <Font name="Poppins Medium" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Pane layoutX="32.0" layoutY="106.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warm-Up" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Text layoutX="33.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day #1" wrappingWidth="261.67706298828125">
+                           <font>
+                              <Font name="Poppins Medium" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Pane layoutX="32.0" layoutY="256.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bench Press" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="356.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pull-Up" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="456.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Overhead Press" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="556.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dips" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Text layoutX="23.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day #2" wrappingWidth="261.67706298828125">
+                           <font>
+                              <Font name="Poppins Medium" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Pane layoutX="32.0" layoutY="706.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Barbell Squat" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="806.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadlift" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="906.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bulgarian Split Squat" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3'" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="1006.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weighted Calf Raises" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Text layoutX="23.0" layoutY="1136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day #3" wrappingWidth="261.67706298828125">
+                           <font>
+                              <Font name="Poppins Medium" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Pane layoutX="32.0" layoutY="1156.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sprint Intervals" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="1256.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hanging Knee Raise" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="1356.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plank with Shoulder Taps" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="16.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="1456.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine Ball Slams" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Text layoutX="23.0" layoutY="1586.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day #4" wrappingWidth="261.67706298828125">
+                           <font>
+                              <Font name="Poppins Medium" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Pane layoutX="32.0" layoutY="1606.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yoga" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Text layoutX="23.0" layoutY="1736.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day #5" wrappingWidth="261.67706298828125">
+                           <font>
+                              <Font name="Poppins Medium" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Pane layoutX="32.0" layoutY="1756.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kettlebell Swings" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="1856.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Box Jumps" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="1956.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Farmers Carry" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="2056.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Battle Ropes" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Text layoutX="23.0" layoutY="2186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day #6" wrappingWidth="261.67706298828125">
+                           <font>
+                              <Font name="Poppins Medium" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.006729475100942127">
+                                       <color>
+                                          <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Pane layoutX="32.0" layoutY="2206.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clean And Press" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#1" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="2306.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Barbell Squat to Overhead Press" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="16.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#2" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="2406.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weighted Pull- Ups" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#3" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="32.0" layoutY="2506.0" prefHeight="86.0" prefWidth="267.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
+                           <children>
+                              <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadlift" wrappingWidth="129.71557617187506">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="18.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Text layoutX="183.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#4" wrappingWidth="60.004005432128906">
+                                 <font>
+                                    <Font name="Poppins SemiBold" size="37.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Text>
+                              <Line endX="10.199996948242188" endY="57.16664123535156" layoutX="151.0" layoutY="28.0" startX="10.199996948242188" startY="-25.233352661132812" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

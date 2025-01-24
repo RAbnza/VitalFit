@@ -5,6 +5,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeParseException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -64,7 +67,7 @@ public class Register_C_Controller {
             changeToDashboard(event);
         }
     }
-
+    
     private boolean saveUserData(String userLevel) {
         // Get the temporary data from A&B
         String username = Register_A_Controller.getTempUsername();
@@ -107,7 +110,7 @@ public class Register_C_Controller {
             return false;
         }
     }
-
+    
     private void changeToDashboard(ActionEvent event) {
         // Change to Dashboard scene only after successful data insertion
         try {
@@ -129,24 +132,51 @@ public class Register_C_Controller {
 
     @FXML
     void recommendedBtn_Clicked(ActionEvent event) {
-    	//TODO: Add Backend Here
+        String dateOfBirth = Register_B_Controller.getTempDateOfBirth();
+        double bmi = Register_B_Controller.getTempBMI();
+        
+        // Calculate age based on the date of birth
+        int age = calculateAge(dateOfBirth);
+        String recommendedLevel = recommendLevel(age, bmi);
 
-    	//Change to Dashboard
-        try {
-            // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Dashboard.fxml"));
-            Parent DashboardRoot = loader.load();
-
-            // Get the current stage (window) from the event source
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(DashboardRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (saveUserData(recommendedLevel)) {
+            changeToDashboard(event);
         }
+    }
+    
+ 
+    private int calculateAge(String dateOfBirth) {
+        
+        try {
+            LocalDate birthDate = LocalDate.parse(dateOfBirth);
+            LocalDate currentDate = LocalDate.now();
+            return Period.between(birthDate, currentDate).getYears();
+        } catch (DateTimeParseException e) {
+            e.printStackTrace();
+            return -1; 
+        }
+    }
+
+    
+    private String recommendLevel(int age, double bmi) {
+        if (age >= 18 && age <= 29) {
+            if (bmi < 18.5 || bmi >= 30) {
+                return "Beginner";
+            } else if (bmi >= 18.5 && bmi < 25) {
+                return "Advanced";
+            } else if (bmi >= 25 && bmi < 30) {
+                return "Intermediate";
+            }
+        } else if (age >= 30 && age <= 49) {
+            if (bmi < 18.5 || bmi >= 30) {
+                return "Beginner";
+            } else {
+                return "Intermediate";
+            }
+        } else if (age >= 50) {
+            return "Beginner";
+        }
+        return "Beginner"; 
     }
 
 }
