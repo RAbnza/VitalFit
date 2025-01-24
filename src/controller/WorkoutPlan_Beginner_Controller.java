@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +28,9 @@ import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+import javafx.event.Event;
+import javafx.scene.layout.HBox;
 
 public class WorkoutPlan_Beginner_Controller {
 
@@ -104,17 +108,6 @@ public class WorkoutPlan_Beginner_Controller {
     	    "https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
     );
     
-    private List<String> intermediateURLs = Arrays.asList(
-    		// Use the embed URL
-    		"https://www.youtube.com/embed/ksy3Bgq1RlM?autoplay=1",
-    		"https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
-    );
-    private List<String> advanceURLs = Arrays.asList(
-    		// Use the embed URL
-    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
-    		"https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
-    );
-    
     private String username; // Store the username for database queries
 
     public void setUsernameFromSession() {
@@ -188,6 +181,8 @@ public class WorkoutPlan_Beginner_Controller {
                         workoutPst.close();
                     } else {
                         System.out.println("You have completed all beginner-level videos!");
+                        //TODO: Change scene here
+                        loadScene("/layouts/WorkoutCongratulations.fxml", null);
                     }
                 }
             } catch (SQLException e) {
@@ -326,6 +321,24 @@ public class WorkoutPlan_Beginner_Controller {
                 workoutPst.close();
             } else {
                 System.out.println("You have completed all beginner-level videos!");
+                
+            	//Change to Workout Congratulation
+                try {
+                    // Load the Balance Due FXML file
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WorkoutCongratulations.fxml"));
+                    Parent WorkoutCongratulationsRoot = loader.load();
+
+                    // Get the current stage (window) from the event source
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                    // Set the new scene
+                    Scene scene = new Scene(WorkoutCongratulationsRoot);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                
             }
 
             // Step 6: Update the workoutDayText UI element
@@ -354,6 +367,28 @@ public class WorkoutPlan_Beginner_Controller {
         }
     	
     }
+    
+    private void loadScene(String fxmlFile, Event event) {
+    	// Use Platform.runLater to ensure this runs after the current stage is fully initialized
+        Platform.runLater(() -> {
+            try {
+                // Load the Register_C FXML file
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WorkoutCongratulations.fxml"));
+                Parent WorkoutCongratulationsRoot = loader.load();
+
+                // Get the current stage
+                Stage stage = (Stage) Stage.getWindows().filtered(Window::isShowing).get(0);
+
+                // Set the new scene
+                Scene scene = new Scene(WorkoutCongratulationsRoot);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
 
     @FXML
     void progressBtn(MouseEvent event) {
