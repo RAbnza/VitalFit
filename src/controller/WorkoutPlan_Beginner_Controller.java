@@ -1,29 +1,19 @@
 package controller;
 
-import javafx.util.Duration;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class WorkoutPlan_Beginner_Controller {
@@ -77,182 +67,120 @@ public class WorkoutPlan_Beginner_Controller {
     private Text workoutTitleText;
 
     @FXML
-    private MediaView workoutVideoFrame;
+    private WebView workoutVideoFrame;
+    private int currentVideoIndex = 0;
+    private List<String> WorkoutTitle = Arrays.asList(
+    		
+    		);
+    
+    
+    private List<String> warmUpURL = Arrays.asList(
+    		// Use the embed URL
+    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1"
+    );
+    private List<String> beginnerURLs = Arrays.asList(
+    		//Day #1:
+    		"https://www.youtube.com/embed/_gws5-2BBkg?autoplay=1",
+    	    "https://www.youtube.com/embed/8lfpYwByrqA?autoplay=1",
+    	    "https://www.youtube.com/embed/dJXKOaUwB1o?autoplay=1",
+    	    "https://www.youtube.com/embed/N6Fv25RjGo8?autoplay=1",
+    	    "https://www.youtube.com/embed/iIUe1oLbc8c?autoplay=1",
+    	    
+    	    //Day #2:
+    	    "https://www.youtube.com/embed/DHji82G0E-0?autoplay=1",
+    	    "https://www.youtube.com/embed/ci3lXPAOcuc?autoplay=1",
+    	    "https://www.youtube.com/embed/p3DnicY_Y3w?autoplay=1",
+    	    "https://www.youtube.com/embed/vD7Y_QbUmRs?autoplay=1",
+    	    "https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
+    );
+    
+    private List<String> intermediateURLs = Arrays.asList(
+    		// Use the embed URL
+    		"https://www.youtube.com/embed/ksy3Bgq1RlM?autoplay=1",
+    		"https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
+    );
+    private List<String> advanceURLs = Arrays.asList(
+    		// Use the embed URL
+    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
+    		"https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
+    );
+    
+    @FXML
+    void background_Clicked(MouseEvent event) {
 
-    private MediaPlayer mediaPlayer;
-    private List<String> videoPaths; 
-    private int currentVideoIndex = 0; 
+    }
+
+    @FXML
+    void dashboardBtn_Clicked(MouseEvent event) {
+
+    }
+
     @FXML
     void logoutBtn_Clicked(ActionEvent event) {
 
     }
-    
+
     @FXML
-    private void markAsDoneBtn_Clicked(ActionEvent event) {
+    void markAsDoneBtn_Clicked(ActionEvent event) {
+    	if (currentVideoIndex == 1) {
+    		//TODO: Refresh the Page
+    		
+    		//TODO: 
+    	}
     }
 
     @FXML
     private void playBtn_Clicked(MouseEvent event) {
+    	
+    	//Warm-Up YouTube Video
         try {
-         
+            // Update the workout title
             workoutTitleText.setText("Exercise - Warm Up");
-            // List all video files in the Warm up folder
-            videoPaths = Arrays.asList(
-                getClass().getResource("/Videos/Warm up/1. Neck Circles.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/2. Shoulder Rolls.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/3. Arm Cross Stretch.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/4. Standing Side Bend.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/5. Standing Hamstring Stretch.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/6. Hip Flexor Stretch.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/7. Dynamic Leg Swings.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/8. Cat-Cow Pose.mp4").toExternalForm()
-            );
 
-            if (videoPaths.isEmpty()) {
-                System.out.println("Error: No videos found in the folder!");
+            // Check if the video list is empty
+            if (warmUpURL.isEmpty()) {
+                System.out.println("Error: No videos found in the list!");
                 return;
             }
 
-            playVideoForDuration(videoPaths.get(currentVideoIndex));
+            // Hide the play button and load the first video
             playBtn.setVisible(false);
+            playYouTubeVideo(warmUpURL.get(currentVideoIndex));
+            currentVideoIndex++;
 
         } catch (Exception e) {
-            e.printStackTrace(); 
+            e.printStackTrace();
             System.out.println("Error loading or playing the video.");
         }
+        
+        
+    }
+    
+    //Call this Function to play the video
+    private void playYouTubeVideo(String url) {
+        // Load the URL into the WebView
+        WebEngine webEngine = workoutVideoFrame.getEngine();
+        webEngine.load(url); 
     }
 
-    private void playVideoForDuration(String videoPath) {
-        // Create Media object for the current video
-        Media media = new Media(videoPath);
-
-        mediaPlayer = new MediaPlayer(media);
-        workoutVideoFrame.setMediaPlayer(mediaPlayer);
-
-        mediaPlayer.play();
-
-        // Set the media to loop for 30 seconds (duration of the warm-up video loop)
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-
-        // Create a Timeline to stop the video after 30 seconds
-        Timeline timeline = new Timeline(
-            new KeyFrame(Duration.seconds(30), (e) -> {
-                mediaPlayer.stop();
-
-                if (currentVideoIndex == videoPaths.size() - 1) {
-                    Platform.runLater(this::showReadyToProceedPrompt); 
-                } else {
-                    currentVideoIndex++;
-                    playVideoForDuration(videoPaths.get(currentVideoIndex));
-                }
-            })
-        );
-
-        timeline.setCycleCount(1);
-        timeline.play();
-    }
-
-    private void showReadyToProceedPrompt() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Ready to Proceed");
-        alert.setHeaderText(null);
-        alert.setContentText("Warm-up is complete. Are you ready to proceed to the workout?");
-
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK) {
-                startCountdownToWorkout();
-            } else {
-                workoutTitleText.setText("Workout Completed");
-                playBtn.setVisible(true);
-            }
-        });
-    }
-
-    private void startCountdownToWorkout() {
-        final int[] countdown = {5}; 
-
-        // Create a Timeline for the countdown
-        Timeline countdownTimeline = new Timeline(
-            new KeyFrame(Duration.seconds(1), event -> {
-                if (countdown[0] > 0) {
-                    // Update the countdown text
-                    workoutTitleText.setText("Get Ready: " + countdown[0] + " seconds");
-                    countdown[0]--;
-                } else {
-                  
-                    ((Timeline) event.getSource()).stop();
-
-                    workoutTitleText.setText("Bodyweight Squats");
-                    playBtn.setVisible(true); 
-                }
-            })
-        );
-
-        countdownTimeline.setCycleCount(5);
-        countdownTimeline.play();
-    }
     @FXML
     void profileBtn_Clicked(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Profile.fxml"));
-            Parent profileRoot = loader.load();
 
-            // Switch scene
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(profileRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @FXML
     void progressBtn(MouseEvent event) {
 
     }
-    @FXML
-    void dashboardBtn_Clicked(MouseEvent event) {
-    	//Change to Dashboard
-        try {
-            // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Dashboard.fxml"));
-            Parent DashboardRoot = loader.load();
-
-            // Get the current stage (window) from the event source
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(DashboardRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     void resourcesBtn_Clicked(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Resources.fxml"));
-            Parent ResourcesRoot = loader.load();
 
-            // Switch scene
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(ResourcesRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @FXML
     void workoutPlanBtn_Clicked(MouseEvent event) {
 
     }
-    @FXML
-    void background_Clicked(MouseEvent event) {
-        // Your code here (if needed)
-    }
+
 }

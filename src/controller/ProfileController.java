@@ -1,7 +1,12 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 import javafx.collections.FXCollections;
@@ -79,18 +84,18 @@ public class ProfileController {
 
     @FXML
     private Text workoutPlanBtn;
-    
+
     @FXML
     private Button BeginnerBtn;
-    
+
     @FXML
     private Button IntermediateBtn;
-    
+
     @FXML
     private Button AdvancedBtn;
-    
+
     private String username; // Store the username for database queries
-    
+
     public void setUsernameFromSession() {
         this.username = SessionManager.getInstance().getUsername();
         NameText.setText(username);
@@ -116,7 +121,7 @@ public class ProfileController {
                 weightTxtField.setText(String.valueOf(rs.getDouble("user_weight")));
                 bmiTxtField.setText(String.format("%.2f", rs.getDouble("user_bmi")));
                 difficultyText.setText(rs.getString("user_level"));
-                
+
                 // Disable editing
                 disableEditing();
             } else {
@@ -141,7 +146,7 @@ public class ProfileController {
         genderCmbBox.setDisable(true);
         datePicker.setDisable(true);
     }
-    
+
     private boolean updateProfileInDatabase(String name, String gender, double height, double weight, double bmi, LocalDate dateOfBirth) {
         String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
@@ -167,7 +172,7 @@ public class ProfileController {
             return false;
         }
     }
-    
+
     private void refreshPage(ActionEvent event) {
         try {
             // Get the current stage
@@ -189,17 +194,17 @@ public class ProfileController {
     @FXML
     public void initialize() {
     	setUsernameFromSession();
-    	
+
     	// Request focus on the anchorPane to prevent auto-focus on the TextField
-    	bmiTxtField.setFocusTraversable(false); 
-    	datePicker.setFocusTraversable(false); 
-    	genderCmbBox.setFocusTraversable(false); 
-    	editDifficultyBtn.setFocusTraversable(false); 
-    	heightTxtField.setFocusTraversable(false); 
-    	nameTxtField.setFocusTraversable(false); 
-    	weightTxtField.setFocusTraversable(false); 
-    	editProfileBtn.setFocusTraversable(false); 
-        
+    	bmiTxtField.setFocusTraversable(false);
+    	datePicker.setFocusTraversable(false);
+    	genderCmbBox.setFocusTraversable(false);
+    	editDifficultyBtn.setFocusTraversable(false);
+    	heightTxtField.setFocusTraversable(false);
+    	nameTxtField.setFocusTraversable(false);
+    	weightTxtField.setFocusTraversable(false);
+    	editProfileBtn.setFocusTraversable(false);
+
     	BeginnerBtn.setVisible(false);
         IntermediateBtn.setVisible(false);
         AdvancedBtn.setVisible(false);
@@ -208,11 +213,11 @@ public class ProfileController {
         BeginnerBtn.setOnMouseClicked(e -> saveDifficultyLevel("Beginner"));
         IntermediateBtn.setOnMouseClicked(e -> saveDifficultyLevel("Intermediate"));
         AdvancedBtn.setOnMouseClicked(e -> saveDifficultyLevel("Advanced"));
-    	
+
         anchorPane.requestFocus();
-    	
+
     	String[] genderArray = {"Male", "Female"};
-    	
+
     	// Set items for the ComboBox using the array
         genderCmbBox.setItems(FXCollections.observableArrayList(genderArray));
 
@@ -230,20 +235,20 @@ public class ProfileController {
     @FXML
     void background_Clicked(MouseEvent event) {
         // Request focus on the anchorPane to prevent auto-focus on the TextField
-    	bmiTxtField.setFocusTraversable(false); 
-    	datePicker.setFocusTraversable(false); 
-    	genderCmbBox.setFocusTraversable(false); 
-    	editDifficultyBtn.setFocusTraversable(false); 
-    	heightTxtField.setFocusTraversable(false); 
-    	nameTxtField.setFocusTraversable(false); 
-    	weightTxtField.setFocusTraversable(false); 
-    	editProfileBtn.setFocusTraversable(false); 
+    	bmiTxtField.setFocusTraversable(false);
+    	datePicker.setFocusTraversable(false);
+    	genderCmbBox.setFocusTraversable(false);
+    	editDifficultyBtn.setFocusTraversable(false);
+    	heightTxtField.setFocusTraversable(false);
+    	nameTxtField.setFocusTraversable(false);
+    	weightTxtField.setFocusTraversable(false);
+    	editProfileBtn.setFocusTraversable(false);
     	anchorPane.requestFocus();
     }
 
     @FXML
     void dashboardBtn_Clicked(MouseEvent event) {
-    	
+
     	//Change to Dashboard
         try {
             // Load the Balance Due FXML file
@@ -342,7 +347,7 @@ public class ProfileController {
     public void AdvancedBtn_Clicked(ActionEvent event) {
         saveDifficultyLevel("Advanced");
     }
-    
+
     @FXML
     void editProfileBtn_Clicked(ActionEvent event) {
     	// Enable editing for all input fields
@@ -382,14 +387,14 @@ public class ProfileController {
                 // Save to the database
                 if (updateProfileInDatabase(name, gender, height, weight, bmi, dateOfBirth)) {
                     System.out.println("Profile updated successfully!");
-                  
+
                     // Disable editing after saving
                     disableEditing();
                     editProfileBtn.setText("Edit Profile");
-                    
+
                     // Refresh the current page
                     refreshPage(event);
-                    
+
                 } else {
                     System.err.println("Failed to update the profile.");
                 }
@@ -400,7 +405,7 @@ public class ProfileController {
                 System.err.println(ex.getMessage());
             }
         });
-        	
+
     }
 
     @FXML
@@ -426,7 +431,7 @@ public class ProfileController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    	
+
     }
 
     @FXML

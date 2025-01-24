@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,18 +39,18 @@ public class Sign_In_Controller {
 
     @FXML
     private TextField usernameTxtField;
-    
+
     private static final String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
     @FXML
     public void initialize() {
         // Request focus on the anchorPane to prevent auto-focus on the TextField
-    	usernameTxtField.setFocusTraversable(false); 
-    	registerBtn.setFocusTraversable(false); 
-    	LoginBtn.setFocusTraversable(false); 
+    	usernameTxtField.setFocusTraversable(false);
+    	registerBtn.setFocusTraversable(false);
+    	LoginBtn.setFocusTraversable(false);
     	anchorPane.requestFocus();
     }
-    
+
     @FXML
     void LoginBtn_Clicked(ActionEvent event) {
         // Get the username entered by the user from a TextField
@@ -122,15 +121,15 @@ public class Sign_In_Controller {
     @FXML
     void background_Clicked(MouseEvent event) {
         // Request focus on the anchorPane to prevent auto-focus on the TextField
-    	usernameTxtField.setFocusTraversable(false); 
-    	registerBtn.setFocusTraversable(false); 
-    	LoginBtn.setFocusTraversable(false); 
+    	usernameTxtField.setFocusTraversable(false);
+    	registerBtn.setFocusTraversable(false);
+    	LoginBtn.setFocusTraversable(false);
     	anchorPane.requestFocus();
     }
 
     @FXML
     void registerBtn_Clicked(MouseEvent event) {
-    	
+
     	//Change to Register_A
         try {
             // Load the Balance Due FXML file

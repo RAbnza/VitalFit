@@ -33,29 +33,29 @@ public class Register_A_Controller {
 
     @FXML
     private ImageView background;
-    
+
     @FXML
     private Text go_to_loginBtn;
 
     @FXML
     private TextField usernameTxtField;
-    
+
     private static String tempUsername;//temoraray storage
     private static final String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
     @FXML
     public void initialize() {
         // Request focus on the anchorPane to prevent auto-focus on the TextField
-    	usernameTxtField.setFocusTraversable(false); 
-    	NextBtn.setFocusTraversable(false); 
+    	usernameTxtField.setFocusTraversable(false);
+    	NextBtn.setFocusTraversable(false);
     }
-    
+
     @FXML
     void NextBtn_Clicked(ActionEvent event) {
-    	
+
     	tempUsername = usernameTxtField.getText();
-    	
-    	
+
+
     	   // Check if the user exist in db
         boolean isUsernameTaken = false;
 
@@ -65,12 +65,12 @@ public class Register_A_Controller {
             PreparedStatement pst = conn.prepareStatement(query);
             pst.setString(1, tempUsername);
 
-            // Execute 
+            // Execute
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
                 int count = rs.getInt(1);
                 if (count > 0) {
-                    // Username exists show error 
+                    // Username exists show error
                     isUsernameTaken = true;
                 }
             }
@@ -78,7 +78,7 @@ public class Register_A_Controller {
             e.printStackTrace();
         }
 
-        // If username is taken show error message 
+        // If username is taken show error message
         if (isUsernameTaken) {
             // error message if the username is already taken
             Alert alert = new Alert(AlertType.ERROR);
@@ -105,7 +105,7 @@ public class Register_A_Controller {
             }
         }
     }
-    
+
     // Getter for the temporary username
     public static String getTempUsername() {
         return tempUsername;
@@ -113,14 +113,14 @@ public class Register_A_Controller {
 
     @FXML
     void background_Clicked(MouseEvent event) {
-    	usernameTxtField.setFocusTraversable(false); 
-    	NextBtn.setFocusTraversable(false); 
+    	usernameTxtField.setFocusTraversable(false);
+    	NextBtn.setFocusTraversable(false);
     	anchorPane.requestFocus();
     }
-    
+
     @FXML
     void go_to_loginBtn_Clicked(MouseEvent event) {
-    	
+
     	//Change to Sign In
         try {
             // Load the Balance Due FXML file
@@ -137,7 +137,7 @@ public class Register_A_Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       
+
     }
 
     @FXML
