@@ -1,8 +1,13 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.*;
-import java.time.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.Period;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,7 +35,7 @@ public class DashboardController {
 
     @FXML
     private Text dashboardBtn;
-    
+
     @FXML
     private Text finishedWorkoutsText;
 
@@ -42,7 +47,7 @@ public class DashboardController {
 
     @FXML
     private Text nameText;
-    
+
     @FXML
     private Text PhysicalLevelText;
 
@@ -108,7 +113,7 @@ public class DashboardController {
 
     @FXML
     private Text resourcesBtn;
-    
+
     @FXML
     private Text totalDaysText;
 
@@ -117,13 +122,13 @@ public class DashboardController {
 
     @FXML
     private Text workoutPlanBtn;
-    
+
     private String username; // Store the username for database queries
-    
+
     public void setUsernameFromSession() {
         this.username = SessionManager.getInstance().getUsername();
         populateProfileFields();
-        
+
     }
     private void populateProfileFields() {
         String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
@@ -142,7 +147,7 @@ public class DashboardController {
                 heightText.setText(String.valueOf(rs.getDouble("user_height")));
                 weightText.setText(String.valueOf(rs.getDouble("user_weight")));
                 PhysicalLevelText.setText(rs.getString("user_level"));
-                
+
                 // Retrieve date of birth and compute age
                 LocalDate dateOfBirth = rs.getDate("user_dateOfBirth").toLocalDate();
 
@@ -150,7 +155,7 @@ public class DashboardController {
 
                 ageText.setText(String.valueOf(age));
 
-                
+
             } else {
                 System.err.println("No data found for username: " + username);
             }
@@ -159,14 +164,14 @@ public class DashboardController {
             e.printStackTrace();
         }
     }
-    
-    
+
+
 
     @FXML
     public void initialize() {
         setUsernameFromSession();
     }
-    
+
     @FXML
     void background_Clicked(MouseEvent event) {
 
@@ -195,7 +200,7 @@ public class DashboardController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    	
+
     }
 
     @FXML

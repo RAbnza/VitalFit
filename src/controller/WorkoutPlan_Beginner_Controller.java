@@ -1,29 +1,30 @@
 package controller;
 
-import javafx.util.Duration;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.Period;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class WorkoutPlan_Beginner_Controller {
@@ -53,9 +54,6 @@ public class WorkoutPlan_Beginner_Controller {
     private Text numOfSetsText;
 
     @FXML
-    private ImageView playBtn;
-
-    @FXML
     private Text profileBtn;
 
     @FXML
@@ -77,182 +75,238 @@ public class WorkoutPlan_Beginner_Controller {
     private Text workoutTitleText;
 
     @FXML
-    private MediaView workoutVideoFrame;
+    private WebView workoutVideoFrame;
+    
+    private int currentVideoIndex = 0;
+    
+    private int workoutProgress = 0;
+    
+    private List<String> WorkoutTitle = Arrays.asList(
+    		
+    		);
+    
+    
+    private List<String> warmUpURL = Arrays.asList(
+    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1"
+    		);
+   
+    private List<String> beginnerURLs = Arrays.asList(
+    		//Day #1:
+    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
+    		"https://www.youtube.com/embed/_gws5-2BBkg?autoplay=1",
+    	    "https://www.youtube.com/embed/8lfpYwByrqA?autoplay=1",
+    	    "https://www.youtube.com/embed/dJXKOaUwB1o?autoplay=1",
+    	    "https://www.youtube.com/embed/N6Fv25RjGo8?autoplay=1",
+    	    "https://www.youtube.com/embed/iIUe1oLbc8c?autoplay=1",
+    	    
+    	    //Day #2:
+    	    "https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
+    	    "https://www.youtube.com/embed/DHji82G0E-0?autoplay=1",
+    	    "https://www.youtube.com/embed/ci3lXPAOcuc?autoplay=1",
+    	    "https://www.youtube.com/embed/p3DnicY_Y3w?autoplay=1",
+    	    "https://www.youtube.com/embed/vD7Y_QbUmRs?autoplay=1",
+    	    
+    	    //Day #3:
+    	    "https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
+    	    "https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
+    );
+    
+    private List<String> intermediateURLs = Arrays.asList(
+    		// Use the embed URL
+    		"https://www.youtube.com/embed/ksy3Bgq1RlM?autoplay=1",
+    		"https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
+    );
+    private List<String> advanceURLs = Arrays.asList(
+    		// Use the embed URL
+    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
+    		"https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
+    );
+    
+    private String username; // Store the username for database queries
 
-    private MediaPlayer mediaPlayer;
-    private List<String> videoPaths; 
-    private int currentVideoIndex = 0; 
+    public void setUsernameFromSession() {
+        this.username = SessionManager.getInstance().getUsername();
+
+    }
+    
+    //Call this Function to play the video
+    private void playYouTubeVideo(String url) {
+        // Load the URL into the WebView
+        WebEngine webEngine = workoutVideoFrame.getEngine();
+        webEngine.load(url); 
+    }
+
+    @FXML
+    public void initialize() {
+        setUsernameFromSession();
+        
+        try {
+            // Check if the user's workout progress is 0
+            String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
+            try (Connection conn = DriverManager.getConnection(DB_PATH)) {
+                // Get the user's workout progress
+                String selectUserQuery = "SELECT workout_done FROM users WHERE username = ?";
+                PreparedStatement selectPst = conn.prepareStatement(selectUserQuery);
+                selectPst.setString(1, username);
+
+                ResultSet userRs = selectPst.executeQuery();
+
+                if (userRs.next()) {
+                    workoutProgress = userRs.getInt("workout_done");
+                }
+                
+                userRs.close();
+                selectPst.close();
+
+                // If workout progress is 0, play the warm-up video
+                if (workoutProgress == 0) {
+                    // Play the first warm-up video
+                    if (!warmUpURL.isEmpty()) {
+                        playYouTubeVideo(warmUpURL.get(0)); // Get the first video URL from the list
+                        workoutTitleText.setText("Exercise - Warm Up");
+                        workoutDescriptionText.setText("Get ready with a quick warm-up!");
+                    } else {
+                        System.err.println("Warm-up URL list is empty!");
+                    }
+                } else {
+                    // Otherwise, skip warm-up and play the next workout video based on progress
+                    if (workoutProgress < beginnerURLs.size()) {
+                        // Play the next workout video
+                        playYouTubeVideo(beginnerURLs.get(workoutProgress));
+
+                        // Query to get the workout title and description from the workout_catalog table
+                        String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
+                        PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery);
+                        
+                        // Set the parameter to match the current workout ID (workoutProgress)
+                        workoutPst.setInt(1, workoutProgress); // Adjusting by +1 to match workout_id (assuming IDs are 1-based)
+
+                        ResultSet workoutRs = workoutPst.executeQuery();
+
+                        if (workoutRs.next()) {
+                            workoutTitleText.setText(workoutRs.getString("workout_title"));
+                            workoutDescriptionText.setText(workoutRs.getString("workout_description"));
+                        } else {
+                            System.out.println("No workout found for the specified workout ID.");
+                        }
+                        
+                        workoutRs.close();
+                        workoutPst.close();
+                    } else {
+                        System.out.println("You have completed all beginner-level videos!");
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("Error retrieving workout progress.");
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error auto-playing the warm-up video.");
+        }
+    }
+    
+    @FXML
+    void background_Clicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void dashboardBtn_Clicked(MouseEvent event) {
+
+    }
+
     @FXML
     void logoutBtn_Clicked(ActionEvent event) {
 
     }
-    
-    @FXML
-    private void markAsDoneBtn_Clicked(ActionEvent event) {
-    }
 
     @FXML
-    private void playBtn_Clicked(MouseEvent event) {
-        try {
-         
-            workoutTitleText.setText("Exercise - Warm Up");
-            // List all video files in the Warm up folder
-            videoPaths = Arrays.asList(
-                getClass().getResource("/Videos/Warm up/1. Neck Circles.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/2. Shoulder Rolls.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/3. Arm Cross Stretch.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/4. Standing Side Bend.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/5. Standing Hamstring Stretch.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/6. Hip Flexor Stretch.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/7. Dynamic Leg Swings.mp4").toExternalForm(),
-                getClass().getResource("/Videos/Warm up/8. Cat-Cow Pose.mp4").toExternalForm()
-            );
+    void markAsDoneBtn_Clicked(ActionEvent event) {
+        String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
-            if (videoPaths.isEmpty()) {
-                System.out.println("Error: No videos found in the folder!");
-                return;
+        try (Connection conn = DriverManager.getConnection(DB_PATH)) {
+            // Step 1: Increment user's workout progress in the database
+            String updateUserQuery = "UPDATE users SET workout_done = workout_done + 1 WHERE username = ?";
+            PreparedStatement updatePst = conn.prepareStatement(updateUserQuery);
+            updatePst.setString(1, username);
+            int rowsAffected = updatePst.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Workout progress updated for user: " + username);
+            } else {
+                System.err.println("Failed to update workout progress for user: " + username);
+            }
+            updatePst.close();
+
+            // Step 2: Get the updated workout progress from the database
+            String selectUserQuery = "SELECT workout_done FROM users WHERE username = ?";
+            PreparedStatement selectPst = conn.prepareStatement(selectUserQuery);
+            selectPst.setString(1, username);
+
+            ResultSet userRs = selectPst.executeQuery();
+            int workoutProgress = 0;  // Make sure the progress is properly initialized
+
+            if (userRs.next()) {
+                workoutProgress = userRs.getInt("workout_done");
             }
 
-            playVideoForDuration(videoPaths.get(currentVideoIndex));
-            playBtn.setVisible(false);
+            userRs.close();
+            selectPst.close();
 
-        } catch (Exception e) {
-            e.printStackTrace(); 
-            System.out.println("Error loading or playing the video.");
+            // Step 3: Play the next workout video based on the updated progress
+            if (workoutProgress < beginnerURLs.size()) {
+                // Play the next workout video
+                playYouTubeVideo(beginnerURLs.get(workoutProgress));
+
+                // Step 4: Get the workout title and description from the workout_catalog table
+                String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
+                PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery);
+                
+                // Set the parameter to match the current workout ID (workoutProgress)
+                workoutPst.setInt(1, workoutProgress);  // Adjusting by +1 to match workout_id (assuming IDs are 1-based)
+
+                ResultSet workoutRs = workoutPst.executeQuery();
+
+                if (workoutRs.next()) {
+                    workoutTitleText.setText(workoutRs.getString("workout_title"));
+                    workoutDescriptionText.setText(workoutRs.getString("workout_description"));
+                } else {
+                    System.out.println("No workout found for the specified workout ID.");
+                }
+
+                workoutRs.close();
+                workoutPst.close();
+            } else {
+                System.out.println("You have completed all beginner-level videos!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error updating or retrieving workout progress.");
         }
     }
 
-    private void playVideoForDuration(String videoPath) {
-        // Create Media object for the current video
-        Media media = new Media(videoPath);
 
-        mediaPlayer = new MediaPlayer(media);
-        workoutVideoFrame.setMediaPlayer(mediaPlayer);
 
-        mediaPlayer.play();
-
-        // Set the media to loop for 30 seconds (duration of the warm-up video loop)
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-
-        // Create a Timeline to stop the video after 30 seconds
-        Timeline timeline = new Timeline(
-            new KeyFrame(Duration.seconds(30), (e) -> {
-                mediaPlayer.stop();
-
-                if (currentVideoIndex == videoPaths.size() - 1) {
-                    Platform.runLater(this::showReadyToProceedPrompt); 
-                } else {
-                    currentVideoIndex++;
-                    playVideoForDuration(videoPaths.get(currentVideoIndex));
-                }
-            })
-        );
-
-        timeline.setCycleCount(1);
-        timeline.play();
-    }
-
-    private void showReadyToProceedPrompt() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Ready to Proceed");
-        alert.setHeaderText(null);
-        alert.setContentText("Warm-up is complete. Are you ready to proceed to the workout?");
-
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK) {
-                startCountdownToWorkout();
-            } else {
-                workoutTitleText.setText("Workout Completed");
-                playBtn.setVisible(true);
-            }
-        });
-    }
-
-    private void startCountdownToWorkout() {
-        final int[] countdown = {5}; 
-
-        // Create a Timeline for the countdown
-        Timeline countdownTimeline = new Timeline(
-            new KeyFrame(Duration.seconds(1), event -> {
-                if (countdown[0] > 0) {
-                    // Update the countdown text
-                    workoutTitleText.setText("Get Ready: " + countdown[0] + " seconds");
-                    countdown[0]--;
-                } else {
-                  
-                    ((Timeline) event.getSource()).stop();
-
-                    workoutTitleText.setText("Bodyweight Squats");
-                    playBtn.setVisible(true); 
-                }
-            })
-        );
-
-        countdownTimeline.setCycleCount(5);
-        countdownTimeline.play();
-    }
     @FXML
     void profileBtn_Clicked(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Profile.fxml"));
-            Parent profileRoot = loader.load();
 
-            // Switch scene
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(profileRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @FXML
     void progressBtn(MouseEvent event) {
 
     }
-    @FXML
-    void dashboardBtn_Clicked(MouseEvent event) {
-    	//Change to Dashboard
-        try {
-            // Load the Balance Due FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Dashboard.fxml"));
-            Parent DashboardRoot = loader.load();
-
-            // Get the current stage (window) from the event source
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Set the new scene
-            Scene scene = new Scene(DashboardRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     void resourcesBtn_Clicked(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Resources.fxml"));
-            Parent ResourcesRoot = loader.load();
 
-            // Switch scene
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(ResourcesRoot);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @FXML
     void workoutPlanBtn_Clicked(MouseEvent event) {
 
     }
-    @FXML
-    void background_Clicked(MouseEvent event) {
-        // Your code here (if needed)
-    }
+
 }
