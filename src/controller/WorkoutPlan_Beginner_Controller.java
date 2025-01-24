@@ -94,14 +94,12 @@ public class WorkoutPlan_Beginner_Controller {
     	    "https://www.youtube.com/embed/iIUe1oLbc8c?autoplay=1",
     	    
     	    //Day #2:
-    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
     	    "https://www.youtube.com/embed/DHji82G0E-0?autoplay=1",
     	    "https://www.youtube.com/embed/ci3lXPAOcuc?autoplay=1",
     	    "https://www.youtube.com/embed/p3DnicY_Y3w?autoplay=1",
     	    "https://www.youtube.com/embed/vD7Y_QbUmRs?autoplay=1",
     	    
     	    //Day #3:
-    		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1",
     	    "https://www.youtube.com/embed/aiBV9Np9yjs?autoplay=1"
     );
     
@@ -252,11 +250,11 @@ public class WorkoutPlan_Beginner_Controller {
 
             // Step 3: Determine the current workout day based on workoutProgress
             int workoutDay = 0; // Default day initialization
-            if (workoutProgress >= 1 && workoutProgress <= 6) {
+            if (workoutProgress >= 1 && workoutProgress <= 5) {
                 workoutDay = 1;
-            } else if (workoutProgress >= 7 && workoutProgress <= 11) {
+            } else if (workoutProgress >= 6 && workoutProgress <= 9) {
                 workoutDay = 2;
-            } else if (workoutProgress == 12) {
+            } else if (workoutProgress == 10) {
                 workoutDay = 3;
             }
 
