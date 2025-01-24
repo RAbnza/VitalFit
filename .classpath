@@ -12,12 +12,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
-	<classpathentry kind="lib" path="Resources"/>
 	<classpathentry kind="lib" path="lib/database-lib/commons-lang3-3.8.1.jar"/>
 	<classpathentry kind="lib" path="lib/database-lib/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/database-lib/hsqldb-2.5.0.jar"/>
 	<classpathentry kind="lib" path="lib/database-lib/jackcess-3.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/database-lib/ucanaccess-5.0.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
+	<classpathentry kind="lib" path="Resources"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

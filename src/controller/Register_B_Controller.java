@@ -49,7 +49,7 @@ public class Register_B_Controller {
 
     @FXML
     private TextField weightTxtField;
-    
+
     // Temporary storage for the data
     private static String tempName;
     private static String tempGender;
@@ -61,23 +61,23 @@ public class Register_B_Controller {
     @FXML
     public void initialize() {
         // Request focus on the anchorPane to prevent auto-focus on the TextField
-    	bmiTxtField.setFocusTraversable(false); 
-    	datePicker.setFocusTraversable(false); 
-    	genderCmbBox.setFocusTraversable(false); 
-    	getBMIBtn.setFocusTraversable(false); 
-    	heightTxtField.setFocusTraversable(false); 
-    	nameTxtField.setFocusTraversable(false); 
-    	weightTxtField.setFocusTraversable(false); 
-    	NextBtn.setFocusTraversable(false); 
+    	bmiTxtField.setFocusTraversable(false);
+    	datePicker.setFocusTraversable(false);
+    	genderCmbBox.setFocusTraversable(false);
+    	getBMIBtn.setFocusTraversable(false);
+    	heightTxtField.setFocusTraversable(false);
+    	nameTxtField.setFocusTraversable(false);
+    	weightTxtField.setFocusTraversable(false);
+    	NextBtn.setFocusTraversable(false);
     	anchorPane.requestFocus();
-    	
+
     	String[] genderArray = {"Male", "Female"};
-    	
+
     	// Set items for the ComboBox using the array
         genderCmbBox.setItems(FXCollections.observableArrayList(genderArray));
 
     }
-    
+
     @FXML
     void NextBtn_Clicked(ActionEvent event) {
         // Store user data temporarily
@@ -87,8 +87,8 @@ public class Register_B_Controller {
         tempWeight = Double.parseDouble(weightTxtField.getText());
         tempHeight = Double.parseDouble(heightTxtField.getText());
         tempBMI = Double.parseDouble(bmiTxtField.getText());
-    	
-    	
+
+
     	//Change to Register_C
         try {
             // Load the Balance Due FXML file
@@ -110,14 +110,14 @@ public class Register_B_Controller {
     @FXML
     void background_Clicked(MouseEvent event) {
         // Request focus on the anchorPane to prevent auto-focus on the TextField
-    	bmiTxtField.setFocusTraversable(false); 
-    	datePicker.setFocusTraversable(false); 
-    	genderCmbBox.setFocusTraversable(false); 
-    	getBMIBtn.setFocusTraversable(false); 
-    	heightTxtField.setFocusTraversable(false); 
-    	nameTxtField.setFocusTraversable(false); 
-    	weightTxtField.setFocusTraversable(false); 
-    	NextBtn.setFocusTraversable(false); 
+    	bmiTxtField.setFocusTraversable(false);
+    	datePicker.setFocusTraversable(false);
+    	genderCmbBox.setFocusTraversable(false);
+    	getBMIBtn.setFocusTraversable(false);
+    	heightTxtField.setFocusTraversable(false);
+    	nameTxtField.setFocusTraversable(false);
+    	weightTxtField.setFocusTraversable(false);
+    	NextBtn.setFocusTraversable(false);
     	anchorPane.requestFocus();
     }
 
@@ -137,14 +137,14 @@ public class Register_B_Controller {
         double height = Double.parseDouble(heightTxtField.getText()) / 100; // Convert to METERS
 
         double bmi = weight / (height * height);
-        bmiTxtField.setText(String.format("%.2f", bmi)); // Display BMI 
+        bmiTxtField.setText(String.format("%.2f", bmi)); // Display BMI
     }
 
     @FXML
     void nameTxtField_Clicked(ActionEvent event) {
-    	
+
     }
-    
+
     // Getter methods for the temporary data
     public static String getTempName() {
         return tempName;

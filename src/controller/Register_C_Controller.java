@@ -64,7 +64,7 @@ public class Register_C_Controller {
             changeToDashboard(event);
         }
     }
-    
+
     private boolean saveUserData(String userLevel) {
         // Get the temporary data from A&B
         String username = Register_A_Controller.getTempUsername();
@@ -107,7 +107,7 @@ public class Register_C_Controller {
             return false;
         }
     }
-    
+
     private void changeToDashboard(ActionEvent event) {
         // Change to Dashboard scene only after successful data insertion
         try {
@@ -130,7 +130,7 @@ public class Register_C_Controller {
     @FXML
     void recommendedBtn_Clicked(ActionEvent event) {
     	//TODO: Add Backend Here
-    	
+
     	//Change to Dashboard
         try {
             // Load the Balance Due FXML file

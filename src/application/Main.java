@@ -1,14 +1,14 @@
 package application;
 
+import java.io.File;
+import java.io.FileInputStream;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
-import java.io.FileInputStream;
-import java.io.File;
 
 public class Main extends Application {
     @Override
@@ -17,7 +17,7 @@ public class Main extends Application {
             // Load the FXML file from the resources folder
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/LoadingScreen.fxml"));
             HBox root = loader.load();
-            
+
             // Set the scene with the loaded FXML layout
             Scene scene = new Scene(root, 1200, 780);
 
@@ -35,7 +35,7 @@ public class Main extends Application {
             // Show the stage
             primaryStage.setScene(scene);
             primaryStage.show();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
