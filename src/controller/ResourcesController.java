@@ -531,11 +531,25 @@ public class ResourcesController {
     @FXML
     void progressBtn(MouseEvent event) {
 
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Progress.fxml"));
+            Parent ResourcesRoot = loader.load();
+
+            // Switch scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(ResourcesRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    	
     }
 
     @FXML
     void resourcesBtn_Clicked(MouseEvent event) {
 
+    	
     }
 
     @FXML
