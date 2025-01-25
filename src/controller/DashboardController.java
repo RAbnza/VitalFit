@@ -113,6 +113,9 @@ public class DashboardController {
 
     @FXML
     private Text resourcesBtn;
+    
+    @FXML
+    private Text seeAllBtn;
 
     @FXML
     private Text TotalDaysText;
@@ -242,6 +245,22 @@ public class DashboardController {
 
     @FXML
     void resourcesBtn_Clicked(MouseEvent event) {
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Resources.fxml"));
+            Parent ResourcesRoot = loader.load();
+
+            // Switch scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(ResourcesRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+    void seeAllBtn_Clicked(MouseEvent event) {
     	try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Resources.fxml"));
             Parent ResourcesRoot = loader.load();

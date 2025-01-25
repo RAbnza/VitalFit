@@ -263,25 +263,25 @@
             <Line endX="-7.73333740234375" endY="111.20001220703125" layoutX="780.0" layoutY="318.0" startX="-7.73333740234375" startY="0.79998779296875" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2.0" />
             <Pane layoutX="257.0" layoutY="517.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                <children>
-                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A lower body exercise that targets the quadriceps hamstrings and glutes." textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="League Spartan Light" size="13.0" />
                      </font>
                   </Text>
-                  <Text fx:id="resource_title_text_1" fill="#232323" layoutX="-3.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fx:id="resource_title_text_1" fill="#232323" layoutX="2.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight Squats" textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
-                        <Font name="Poppins Medium" size="16.0" />
+                        <Font name="Poppins Medium" size="14.0" />
                      </font>
                   </Text>
                </children></Pane>
             <Pane layoutX="257.0" layoutY="646.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                <children>
-                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fill="#232323" layoutX="6.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A core strengthening exercise that targets the abs back and shoulders." textAlignment="CENTER" wrappingWidth="150.78402709960915">
                      <font>
                         <Font name="League Spartan Light" size="13.0" />
                      </font>
                   </Text>
-                  <Text fx:id="resource_title_text_4" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fx:id="resource_title_text_4" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plank" textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="Poppins Medium" size="16.0" />
                      </font>
@@ -289,12 +289,12 @@
                </children></Pane>
             <Pane layoutX="574.0" layoutY="517.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                <children>
-                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fill="#232323" layoutX="2.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A modified version of push-ups done against a wall for a gentler start." textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="League Spartan Light" size="13.0" />
                      </font>
                   </Text>
-                  <Text fx:id="resource_title_text_2" fill="#232323" layoutX="-3.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fx:id="resource_title_text_2" fill="#232323" layoutX="-3.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wall Push-ups" textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="Poppins Medium" size="16.0" />
                      </font>
@@ -302,12 +302,12 @@
                </children></Pane>
             <Pane layoutX="574.0" layoutY="646.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                <children>
-                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="An exercise that improves balance stability and strengthens the core and lower back." textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="League Spartan Light" size="13.0" />
                      </font>
                   </Text>
-                  <Text fx:id="resource_title_text_5" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fx:id="resource_title_text_5" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bird Dog" textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="Poppins Medium" size="16.0" />
                      </font>
@@ -315,12 +315,12 @@
                </children></Pane>
             <Pane layoutX="888.0" layoutY="517.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                <children>
-                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fill="#232323" layoutX="8.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A back exercise that targets the upper back specifically the latissimus dorsi." textAlignment="CENTER" wrappingWidth="150.78402709960915">
                      <font>
                         <Font name="League Spartan Light" size="13.0" />
                      </font>
                   </Text>
-                  <Text fx:id="resource_title_text_3" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fx:id="resource_title_text_3" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bent-over Rows" textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="Poppins Medium" size="16.0" />
                      </font>
@@ -328,12 +328,12 @@
                </children></Pane>
             <Pane layoutX="888.0" layoutY="646.0" prefHeight="110.0" prefWidth="296.0" styleClass="pane" stylesheets="@../styles/Dashboard.css">
                <children>
-                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt..." textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fill="#232323" layoutX="2.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A bodyweight exercise to strengthen the chest triceps and shoulders." textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="League Spartan Light" size="13.0" />
                      </font>
                   </Text>
-                  <Text fx:id="resource_title_text_6" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;TITLE&gt;" textAlignment="CENTER" wrappingWidth="158.78402709960915">
+                  <Text fx:id="resource_title_text_6" fill="#232323" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Push-ups" textAlignment="CENTER" wrappingWidth="158.78402709960915">
                      <font>
                         <Font name="Poppins Medium" size="16.0" />
                      </font>
@@ -556,6 +556,30 @@
                      </stops>
                   </LinearGradient>
                </fill>
+            </Text>
+            <Text fx:id="seeAllBtn" layoutX="1107.0" layoutY="494.0" onMouseClicked="#seeAllBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="See All" wrappingWidth="79.39201354980469">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Text>
          </children>
       </AnchorPane>
