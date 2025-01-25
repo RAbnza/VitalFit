@@ -1,0 +1,30 @@
+
+.usernameTxtField{
+	-fx-padding: 0 0 0 40px;
+}
+
+.NextBtn {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #92A3FD, #9DCEFF);
+    -fx-padding: 10px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1); 
+}
+
+.NextBtn:pressed {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #7283DC, #7BACDE); 
+    -fx-effect: none; 
+}
+
+/* Style the progress bar */
+.progress-bar {
+    -fx-background-color: white; /* Set background color to white */
+    -fx-background-insets: 0, 1; /* Background inset for the progress bar */
+    -fx-border-radius: 99px; /* Rounded corners with 99px radius */
+    -fx-border-color: transparent; /* Remove any border around the progress bar */
+    -fx-border-width: 1px; /* Border width */
+}
+
+/* Style the progress indicator (progress fill) */
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to right, #EEA4CE, #C58BF2); /* Apply gradient fill */
+    -fx-background-radius: 99px; /* Rounded corners with 99px radius for the fill */
+}
