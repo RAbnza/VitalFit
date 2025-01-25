@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="780.0" prefWidth="1200.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="780.0" fitWidth="1200.0" onMouseClicked="#background_Clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Images/Progress.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="profileBtn" fill="#475569" layoutX="78.0" layoutY="197.0" onMouseClicked="#profileBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="workoutPlanBtn" fill="#475569" layoutX="78.0" layoutY="261.0" onMouseClicked="#workoutPlanBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Workout Plan">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="progressBtn" fill="WHITE" layoutX="78.0" layoutY="325.0" onMouseClicked="#progressBtn" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="resourcesBtn" fill="#475569" layoutX="78.0" layoutY="389.0" onMouseClicked="#resourcesBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Resources">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fx:id="dashboardBtn" fill="#475569" layoutX="78.0" layoutY="132.0" onMouseClicked="#dashboardBtn_Clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="Manrope SemiBold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Button fx:id="logoutBtn" layoutX="78.0" layoutY="714.0" mnemonicParsing="false" onAction="#logoutBtn_Clicked" prefHeight="13.0" prefWidth="98.0" style="-fx-background-radius: 99;" styleClass="Btn2" stylesheets="@../styles/Dashboard.css" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="131.0" layoutX="232.0" layoutY="118.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="969.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9452791810035706" green="0.11999999731779099" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Text fx:id="NameText" fill="WHITE" layoutX="265.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rendel Abainza" wrappingWidth="506.4734344482422">
+               <font>
+                  <Font name="Poppins SemiBold" size="39.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text layoutX="253.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress Tracker" wrappingWidth="546.4734344482422">
+               <font>
+                  <Font name="Poppins SemiBold" size="39.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <Text fill="WHITE" layoutX="778.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight">
+               <font>
+                  <Font name="League Spartan Light" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="858.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KG">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+            </Text>
+            <Text fx:id="weightText" fill="WHITE" layoutX="753.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00.0" wrappingWidth="105.85601806640625">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="1007.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height">
+               <font>
+                  <Font name="League Spartan Light" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="1072.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CM">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+            </Text>
+            <Text fx:id="heightText" fill="WHITE" layoutX="966.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00.0" wrappingWidth="105.85601806640625">
+               <font>
+                  <Font name="League Spartan SemiBold" size="40.0" />
+               </font>
+            </Text>
+            <Line endX="-100.0" endY="172.99996948242188" layoutX="800.0" layoutY="267.0" opacity="0.35" startX="-100.0" startY="-18.333328247070312" />
+            <ProgressBar layoutX="346.0" layoutY="714.0" prefHeight="28.0" prefWidth="727.0" progress="0.18" stylesheets="@../styles/Progress.css">
+               <styleClass>
+                  <String fx:value="bar" />
+                  <String fx:value="progress-bar" />
+               </styleClass>
+            </ProgressBar>
+            <Text layoutX="279.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finished Workouts:" wrappingWidth="379.8550758361815">
+               <font>
+                  <Font name="Poppins SemiBold" size="39.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="finishedWorkoutText" layoutX="290.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="356.6550636291503">
+               <font>
+                  <Font name="Poppins SemiBold" size="39.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="759.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Workout:" textAlignment="CENTER" wrappingWidth="379.8550758361815">
+               <font>
+                  <Font name="Poppins SemiBold" size="39.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="currentWorkoutText" layoutX="770.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Push-Up" textAlignment="CENTER" wrappingWidth="356.6550636291503">
+               <font>
+                  <Font name="Poppins SemiBold" size="39.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="510.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Day:" textAlignment="CENTER" wrappingWidth="379.8550758361815">
+               <font>
+                  <Font name="Poppins SemiBold" size="50.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="NameText112" layoutX="521.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" wrappingWidth="356.6550636291503">
+               <font>
+                  <Font name="Poppins SemiBold" size="60.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.772549033164978" green="0.545098066329956" blue="0.9490196108818054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9333333373069763" green="0.6431372761726379" blue="0.8078431487083435" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Line endX="-578.7999267578125" endY="172.99996948242188" layoutX="810.0" layoutY="267.0" opacity="0.35" startX="389.9998779296875" startY="172.99996948242188" />
+            <Line endX="-578.7999267578125" endY="172.99996948242188" layoutX="810.0" layoutY="467.0" opacity="0.35" startX="389.9998779296875" startY="172.99996948242188" />
+            <Text fx:id="NameText131" layoutX="520.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress" textAlignment="CENTER" wrappingWidth="379.8550758361815">
+               <font>
+                  <Font name="Poppins SemiBold" size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text layoutX="441.0" layoutY="767.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Status:" textAlignment="CENTER" wrappingWidth="161.18832778930653">
+               <font>
+                  <Font name="Poppins SemiBold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Text fx:id="NameText13111" layoutX="606.0" layoutY="750.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C" wrappingWidth="134.5155029296875">
+               <font>
+                  <Font name="Poppins SemiBold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.572549045085907" green="0.6392157077789307" blue="0.9921568632125854" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.615686297416687" green="0.8078431487083435" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
