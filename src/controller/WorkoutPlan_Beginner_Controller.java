@@ -83,8 +83,7 @@ public class WorkoutPlan_Beginner_Controller {
     private WebView workoutVideoFrame;
        
     private int workoutProgress = 0;
-    
-      
+          
     private List<String> warmUpURL = Arrays.asList(
     		"https://www.youtube.com/embed/wJM7e0g-W6c?autoplay=1"
     		);
@@ -158,6 +157,8 @@ public class WorkoutPlan_Beginner_Controller {
                     playYouTubeVideo(warmUpURL.get(0)); // Play the first warm-up video
                     workoutTitleText.setText("Exercise - Warm Up");
                     workoutDescriptionText.setText("Get ready with a quick warm-up!");
+                    numOfSetsText.setText("2 sets");
+                    durationText.setText("8 minutes");
                 } else {
                     System.err.println("Warm-up URL list is empty!");
                 }
@@ -167,7 +168,7 @@ public class WorkoutPlan_Beginner_Controller {
                     playYouTubeVideo(beginnerURLs.get(workoutProgress));
 
                     // Query to get the workout title and description from the workout_catalog table
-                    String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
+                    String selectWorkoutQuery = "SELECT workout_title, workout_description, duration, numOfSets FROM workout_catalog WHERE workout_id = ?";
                     try (PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery)) {
                         workoutPst.setInt(1, workoutProgress); // Match workout ID
                         ResultSet workoutRs = workoutPst.executeQuery();
@@ -175,6 +176,9 @@ public class WorkoutPlan_Beginner_Controller {
                         if (workoutRs.next()) {
                             workoutTitleText.setText(workoutRs.getString("workout_title"));
                             workoutDescriptionText.setText(workoutRs.getString("workout_description"));
+                            numOfSetsText.setText(workoutRs.getString("numOfSets"));
+                            durationText.setText(workoutRs.getString("duration"));
+                            
                         } else {
                             System.out.println("No workout found for the specified workout ID.");
                         }
@@ -321,7 +325,7 @@ public class WorkoutPlan_Beginner_Controller {
                 playYouTubeVideo(beginnerURLs.get(workoutProgress));
 
                 // Get the workout title and description from the workout_catalog table
-                String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
+                String selectWorkoutQuery = "SELECT workout_title, workout_description, duration, numOfSets FROM workout_catalog WHERE workout_id = ?";
                 PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery);
                 workoutPst.setInt(1, workoutProgress);
 
@@ -330,6 +334,8 @@ public class WorkoutPlan_Beginner_Controller {
                 if (workoutRs.next()) {
                     workoutTitleText.setText(workoutRs.getString("workout_title"));
                     workoutDescriptionText.setText(workoutRs.getString("workout_description"));
+                    numOfSetsText.setText(workoutRs.getString("numOfSets"));
+                    durationText.setText(workoutRs.getString("duration"));
                 } else {
                     System.out.println("No workout found for the specified workout ID.");
                 }
