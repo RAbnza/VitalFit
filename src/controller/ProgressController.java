@@ -131,7 +131,14 @@ public class ProgressController {
                 double progress = (double) workoutsDone / totalWorkouts;
                 progress = Math.min(progress, 1.0); // Ensure the progress does not exceed 1.0
                 progressBar.setProgress(progress);
-
+                
+                // Update currentStatusText
+                if (workoutsDone >= totalWorkouts) {
+                    currentStatusText.setText("Complete!");
+                } else {
+                    currentStatusText.setText("Incomplete");
+                }
+                
                 // Fetch current workout from the catalog
                 String workoutQuery = "SELECT workout_title FROM workout_catalog WHERE workout_id = ?";
                 PreparedStatement workoutPst = conn.prepareStatement(workoutQuery);
