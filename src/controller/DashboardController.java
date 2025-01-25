@@ -247,18 +247,57 @@ public class DashboardController {
 
     @FXML
     void workoutPlanBtn_Clicked(MouseEvent event) {
-    	//TODO: Add Backend Here
-    	try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WorkoutPlan_Beginner.fxml"));
-            Parent WorkoutPlan_BeginnerRoot = loader.load();
+        String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
-            // Switch scene
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(WorkoutPlan_BeginnerRoot);
-            stage.setScene(scene);
-            stage.show();
+        try (Connection conn = DriverManager.getConnection(DB_PATH)) {
+            // Retrieve the user level from the database
+            String query = "SELECT user_level FROM users WHERE username = ?";
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, username);
+
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                String userLevel = rs.getString("user_level").toLowerCase(); // Convert to lowercase for easier comparison
+                String fxmlPath = "";
+
+                // Determine the FXML file to load based on user level
+                switch (userLevel) {
+                    case "beginner":
+                        fxmlPath = "/layouts/WorkoutPlan_Beginner.fxml";
+                        break;
+                    case "intermediate":
+                        fxmlPath = "/layouts/WorkoutPlan_Intermediate.fxml";
+                        break;
+                    case "advanced":
+                        fxmlPath = "/layouts/WorkoutPlan_Advance.fxml";
+                        break;
+                    default:
+                        System.err.println("Invalid user level: " + userLevel);
+                        return; // Exit if the user level is invalid
+                }
+
+                // Load the corresponding scene
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+                Parent root = loader.load();
+
+                // Switch the scene
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+
+            rs.close();
+            pst.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error retrieving user level from the database.");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error loading the workout plan scene.");
         }
     }
+
 }

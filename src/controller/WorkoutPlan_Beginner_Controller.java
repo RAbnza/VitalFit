@@ -125,49 +125,51 @@ public class WorkoutPlan_Beginner_Controller {
     @FXML
     public void initialize() {
         setUsernameFromSession();
-        
-        try {
-            // Check if the user's workout progress is 0
-            String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
-            try (Connection conn = DriverManager.getConnection(DB_PATH)) {
-                // Get the user's workout progress
-                String selectUserQuery = "SELECT workout_done, workout_day FROM users WHERE username = ?";
-                PreparedStatement selectPst = conn.prepareStatement(selectUserQuery);
-                selectPst.setString(1, username);
 
+        String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
+        try (Connection conn = DriverManager.getConnection(DB_PATH)) {
+            // Get the user's workout progress and day
+            String selectUserQuery = "SELECT workout_done, workout_day FROM users WHERE username = ?";
+            try (PreparedStatement selectPst = conn.prepareStatement(selectUserQuery)) {
+                selectPst.setString(1, username);
                 ResultSet userRs = selectPst.executeQuery();
 
                 if (userRs.next()) {
                     workoutProgress = userRs.getInt("workout_done");
-                    workoutDayText.setText(userRs.getString("workout_day"));
-                }
-                
-                userRs.close();
-                selectPst.close();
-                
-                // If workout progress is 0, play the warm-up video
-                if (workoutProgress == 0) {
-                    // Play the first warm-up video
-                    if (!warmUpURL.isEmpty()) {
-                        playYouTubeVideo(warmUpURL.get(0)); // Get the first video URL from the list
-                        workoutTitleText.setText("Exercise - Warm Up");
-                        workoutDescriptionText.setText("Get ready with a quick warm-up!");
-                    } else {
-                        System.err.println("Warm-up URL list is empty!");
+                    int workoutDay = userRs.getInt("workout_day"); // Ensure it's retrieved as an integer
+
+                    workoutDayText.setText(String.valueOf(workoutDay));
+
+                    // Check if the user has completed all workouts (Day 3, Exercise 10)
+                    if (workoutDay == 3 && workoutProgress == 10) {
+                        System.out.println("User has completed all workouts. Showing congratulations scene.");
+
+                        // Change to the Workout Congratulations scene
+                        loadScene("/layouts/WorkoutCongratulations.fxml", null);
+                        return; // Exit the method to prevent further code execution
                     }
+                }
+                userRs.close();
+            }
+
+            // If workout progress is 0, play the warm-up video
+            if (workoutProgress == 0) {
+                if (!warmUpURL.isEmpty()) {
+                    playYouTubeVideo(warmUpURL.get(0)); // Play the first warm-up video
+                    workoutTitleText.setText("Exercise - Warm Up");
+                    workoutDescriptionText.setText("Get ready with a quick warm-up!");
                 } else {
-                    // Otherwise, skip warm-up and play the next workout video based on progress
-                    if (workoutProgress < beginnerURLs.size()) {
-                        // Play the next workout video
-                        playYouTubeVideo(beginnerURLs.get(workoutProgress));
+                    System.err.println("Warm-up URL list is empty!");
+                }
+            } else {
+                // Otherwise, play the next workout video based on progress
+                if (workoutProgress < beginnerURLs.size()) {
+                    playYouTubeVideo(beginnerURLs.get(workoutProgress));
 
-                        // Query to get the workout title and description from the workout_catalog table
-                        String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
-                        PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery);
-                        
-                        // Set the parameter to match the current workout ID (workoutProgress)
-                        workoutPst.setInt(1, workoutProgress); // Adjusting by +1 to match workout_id (assuming IDs are 1-based)
-
+                    // Query to get the workout title and description from the workout_catalog table
+                    String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
+                    try (PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery)) {
+                        workoutPst.setInt(1, workoutProgress); // Match workout ID
                         ResultSet workoutRs = workoutPst.executeQuery();
 
                         if (workoutRs.next()) {
@@ -176,25 +178,23 @@ public class WorkoutPlan_Beginner_Controller {
                         } else {
                             System.out.println("No workout found for the specified workout ID.");
                         }
-                        
                         workoutRs.close();
-                        workoutPst.close();
-                    } else {
-                        System.out.println("You have completed all beginner-level videos!");
-                        //TODO: Change scene here
-                        loadScene("/layouts/WorkoutCongratulations.fxml", null);
                     }
+                } else {
+                    System.out.println("You have completed all beginner-level videos!");
+                    // Change to Congratulations scene
+                    loadScene("/layouts/WorkoutCongratulations.fxml", null);
                 }
-            } catch (SQLException e) {
-                e.printStackTrace();
-                System.out.println("Error retrieving workout progress.");
             }
-            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error retrieving workout progress.");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error auto-playing the warm-up video.");
         }
     }
+
     
     @FXML
     void background_Clicked(MouseEvent event) {
@@ -250,20 +250,7 @@ public class WorkoutPlan_Beginner_Controller {
         String DB_PATH = "jdbc:ucanaccess://./src/database/VitalFit_Database.accdb";
 
         try (Connection conn = DriverManager.getConnection(DB_PATH)) {
-            // Step 1: Increment user's workout progress in the database
-            String updateUserQuery = "UPDATE users SET workout_done = workout_done + 1 WHERE username = ?";
-            PreparedStatement updatePst = conn.prepareStatement(updateUserQuery);
-            updatePst.setString(1, username);
-            int rowsAffected = updatePst.executeUpdate();
-
-            if (rowsAffected > 0) {
-                System.out.println("Workout progress updated for user: " + username);
-            } else {
-                System.err.println("Failed to update workout progress for user: " + username);
-            }
-            updatePst.close();
-
-            // Step 2: Get the updated workout progress from the database
+            // Step 2: Get the current workout progress from the database
             String selectUserQuery = "SELECT workout_done FROM users WHERE username = ?";
             PreparedStatement selectPst = conn.prepareStatement(selectUserQuery);
             selectPst.setString(1, username);
@@ -278,7 +265,40 @@ public class WorkoutPlan_Beginner_Controller {
             userRs.close();
             selectPst.close();
 
-            // Step 3: Determine the current workout day based on workoutProgress
+            // Step 3: Determine if all workouts are completed
+            if (workoutProgress >= beginnerURLs.size() - 1) {
+                System.out.println("You have completed all beginner-level videos!");
+                
+                // Change to the Workout Congratulations scene
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WorkoutCongratulations.fxml"));
+                    Parent workoutCongratulationsRoot = loader.load();
+
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(workoutCongratulationsRoot);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return; // Exit the method to prevent further execution
+            }
+
+            // Step 1: Increment user's workout progress in the database (only if workouts are remaining)
+            String updateUserQuery = "UPDATE users SET workout_done = workout_done + 1 WHERE username = ?";
+            PreparedStatement updatePst = conn.prepareStatement(updateUserQuery);
+            updatePst.setString(1, username);
+            int rowsAffected = updatePst.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Workout progress updated for user: " + username);
+            } else {
+                System.err.println("Failed to update workout progress for user: " + username);
+            }
+            updatePst.close();
+
+            // Step 4: Get the updated workout progress and determine the workout day
+            workoutProgress++; // Increment for use in determining the workout day
             int workoutDay = 0; // Default day initialization
             if (workoutProgress >= 1 && workoutProgress <= 5) {
                 workoutDay = 1;
@@ -296,17 +316,14 @@ public class WorkoutPlan_Beginner_Controller {
             updateDayPst.executeUpdate();
             updateDayPst.close();
 
-            // Step 4: Play the next workout video based on the updated progress
+            // Step 5: Play the next workout video based on the updated progress
             if (workoutProgress < beginnerURLs.size()) {
-                // Play the next workout video
                 playYouTubeVideo(beginnerURLs.get(workoutProgress));
 
-                // Step 5: Get the workout title and description from the workout_catalog table
+                // Get the workout title and description from the workout_catalog table
                 String selectWorkoutQuery = "SELECT workout_title, workout_description FROM workout_catalog WHERE workout_id = ?";
                 PreparedStatement workoutPst = conn.prepareStatement(selectWorkoutQuery);
-
-                // Set the parameter to match the current workout ID (workoutProgress)
-                workoutPst.setInt(1, workoutProgress); // Assuming workout_id starts at 1
+                workoutPst.setInt(1, workoutProgress);
 
                 ResultSet workoutRs = workoutPst.executeQuery();
 
@@ -319,26 +336,6 @@ public class WorkoutPlan_Beginner_Controller {
 
                 workoutRs.close();
                 workoutPst.close();
-            } else {
-                System.out.println("You have completed all beginner-level videos!");
-                
-            	//Change to Workout Congratulation
-                try {
-                    // Load the Balance Due FXML file
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WorkoutCongratulations.fxml"));
-                    Parent WorkoutCongratulationsRoot = loader.load();
-
-                    // Get the current stage (window) from the event source
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                    // Set the new scene
-                    Scene scene = new Scene(WorkoutCongratulationsRoot);
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                
             }
 
             // Step 6: Update the workoutDayText UI element
@@ -349,6 +346,7 @@ public class WorkoutPlan_Beginner_Controller {
             System.out.println("Error updating or retrieving workout progress.");
         }
     }
+
 
     @FXML
     void profileBtn_Clicked(MouseEvent event) {
