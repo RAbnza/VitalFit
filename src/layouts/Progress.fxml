@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProgressController">
    <children>
       <AnchorPane fx:id="anchorPane" prefHeight="780.0" prefWidth="1200.0">
          <children>
@@ -143,7 +143,7 @@
                </font>
             </Text>
             <Line endX="-100.0" endY="172.99996948242188" layoutX="800.0" layoutY="267.0" opacity="0.35" startX="-100.0" startY="-18.333328247070312" />
-            <ProgressBar layoutX="346.0" layoutY="712.0" prefHeight="28.0" prefWidth="727.0" progress="0.8" stylesheets="@../styles/Progress.css">
+            <ProgressBar fx:id="progressBar" layoutX="346.0" layoutY="712.0" prefHeight="28.0" prefWidth="727.0" progress="0.8" stylesheets="@../styles/Progress.css">
                <styleClass>
                   <String fx:value="bar" />
                   <String fx:value="progress-bar" />
@@ -269,7 +269,7 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <Text fx:id="NameText112" layoutX="521.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" wrappingWidth="356.6550636291503">
+            <Text fx:id="currentDay" layoutX="521.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" wrappingWidth="356.6550636291503">
                <font>
                   <Font name="Poppins SemiBold" size="60.0" />
                </font>
@@ -295,7 +295,7 @@
             </Text>
             <Line endX="-578.7999267578125" endY="172.99996948242188" layoutX="810.0" layoutY="267.0" opacity="0.35" startX="389.9998779296875" startY="172.99996948242188" />
             <Line endX="-578.7999267578125" endY="172.99996948242188" layoutX="810.0" layoutY="467.0" opacity="0.35" startX="389.9998779296875" startY="172.99996948242188" />
-            <Text fx:id="NameText131" layoutX="520.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Progress" textAlignment="CENTER" wrappingWidth="379.8550758361815">
+            <Text layoutX="520.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Progress" textAlignment="CENTER" wrappingWidth="379.8550758361815">
                <font>
                   <Font name="Poppins SemiBold" size="30.0" />
                </font>
@@ -343,7 +343,7 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <Text fx:id="NameText13111" layoutX="719.0" layoutY="765.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incomplete" wrappingWidth="123.95598793029785">
+            <Text fx:id="currentStatusText" layoutX="719.0" layoutY="765.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incomplete" wrappingWidth="123.95598793029785">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
