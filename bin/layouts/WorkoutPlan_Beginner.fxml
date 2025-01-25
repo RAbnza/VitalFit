@@ -320,7 +320,7 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <Text fx:id="numOfSetsText" layoutX="424.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="426.47711181640625">
+            <Text fx:id="numOfSetsText" layoutX="411.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="426.47711181640625">
                <font>
                   <Font name="Poppins Medium" size="16.0" />
                </font>
