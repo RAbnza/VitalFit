@@ -197,7 +197,7 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <Text layoutX="759.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Workout:" textAlignment="CENTER" wrappingWidth="379.8550758361815">
+            <Text layoutX="759.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Workout:" textAlignment="CENTER" wrappingWidth="379.8550758361815">
                <font>
                   <Font name="Poppins SemiBold" size="39.0" />
                </font>
