@@ -91,6 +91,48 @@ public class ResourcesController {
     private Text recommendation_duration_text_111114111111;
 
     @FXML
+    private Text recommendation_duration_text_1112;
+
+    @FXML
+    private Text recommendation_duration_text_11121;
+
+    @FXML
+    private Text recommendation_duration_text_111211;
+
+    @FXML
+    private Text recommendation_duration_text_1112111;
+
+    @FXML
+    private Text recommendation_duration_text_11121111;
+
+    @FXML
+    private Text recommendation_duration_text_111211111;
+
+    @FXML
+    private Text recommendation_duration_text_1112111111;
+
+    @FXML
+    private Text recommendation_duration_text_11121111111;
+
+    @FXML
+    private Text recommendation_duration_text_111211111111;
+
+    @FXML
+    private Text recommendation_duration_text_1112111111111;
+
+    @FXML
+    private Text recommendation_duration_text_11121111111111;
+
+    @FXML
+    private Text recommendation_duration_text_111211111111111;
+
+    @FXML
+    private Text recommendation_duration_text_1112111111111111;
+
+    @FXML
+    private Text recommendation_duration_text_11121111111111111;
+
+    @FXML
     private Text recommendation_duration_text_112;
 
     @FXML
@@ -188,6 +230,48 @@ public class ResourcesController {
 
     @FXML
     private Text recommendation_title_text_111114111111;
+
+    @FXML
+    private Text recommendation_title_text_1112;
+
+    @FXML
+    private Text recommendation_title_text_11121;
+
+    @FXML
+    private Text recommendation_title_text_111211;
+
+    @FXML
+    private Text recommendation_title_text_1112111;
+
+    @FXML
+    private Text recommendation_title_text_11121111;
+
+    @FXML
+    private Text recommendation_title_text_111211111;
+
+    @FXML
+    private Text recommendation_title_text_1112111111;
+
+    @FXML
+    private Text recommendation_title_text_11121111111;
+
+    @FXML
+    private Text recommendation_title_text_111211111111;
+
+    @FXML
+    private Text recommendation_title_text_1112111111111;
+
+    @FXML
+    private Text recommendation_title_text_11121111111111;
+
+    @FXML
+    private Text recommendation_title_text_111211111111111;
+
+    @FXML
+    private Text recommendation_title_text_1112111111111111;
+
+    @FXML
+    private Text recommendation_title_text_11121111111111111;
 
     @FXML
     private Text recommendation_title_text_112;
@@ -289,6 +373,48 @@ public class ResourcesController {
     private Text recommendation_title_text_1211114111111;
 
     @FXML
+    private Text recommendation_title_text_12112;
+
+    @FXML
+    private Text recommendation_title_text_121121;
+
+    @FXML
+    private Text recommendation_title_text_1211211;
+
+    @FXML
+    private Text recommendation_title_text_12112111;
+
+    @FXML
+    private Text recommendation_title_text_121121111;
+
+    @FXML
+    private Text recommendation_title_text_1211211111;
+
+    @FXML
+    private Text recommendation_title_text_12112111111;
+
+    @FXML
+    private Text recommendation_title_text_121121111111;
+
+    @FXML
+    private Text recommendation_title_text_1211211111111;
+
+    @FXML
+    private Text recommendation_title_text_12112111111111;
+
+    @FXML
+    private Text recommendation_title_text_121121111111111;
+
+    @FXML
+    private Text recommendation_title_text_1211211111111111;
+
+    @FXML
+    private Text recommendation_title_text_12112111111111111;
+
+    @FXML
+    private Text recommendation_title_text_121121111111111111;
+
+    @FXML
     private Text recommendation_title_text_1212;
 
     @FXML
@@ -340,18 +466,6 @@ public class ResourcesController {
     private ScrollPane resourcesScrollPane;
 
     @FXML
-    private ImageView workoutBtn1;
-
-    @FXML
-    private ImageView workoutBtn2;
-
-    @FXML
-    private ImageView workoutBtn3;
-
-    @FXML
-    private ImageView workoutBtn4;
-
-    @FXML
     private Text workoutPlanBtn;
 
     @FXML
@@ -381,7 +495,21 @@ public class ResourcesController {
 
     @FXML
     void logoutBtn_Clicked(ActionEvent event) {
+        // Clear the session
+        SessionManager.getInstance().clearSession();
 
+        // Redirect to Login scene
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/Sign_In.fxml"));
+            Parent loginRoot = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loginRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -411,28 +539,7 @@ public class ResourcesController {
     }
 
     @FXML
-    void workoutBtn1_Clicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    void workoutBtn2_Clicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    void workoutBtn3_Clicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    void workoutBtn4_Clicked(MouseEvent event) {
-
-    }
-
-    @FXML
     void workoutPlanBtn_Clicked(MouseEvent event) {
-    	//TODO: Add Backend Here
     	try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/WorkoutPlan_Beginner.fxml"));
             Parent WorkoutPlan_BeginnerRoot = loader.load();
